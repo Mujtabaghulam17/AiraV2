@@ -122,13 +122,13 @@ const AIRAWebsite = () => {
         language: 'Taal'
       },
       form: {
-        title: 'Vraag jouw Quickscan aan',
-        subtitle: 'Vul onderstaand formulier in en wij nemen binnen 24 uur contact op.',
+        title: 'Neem contact op', // Aangepast van 'Vraag jouw Quickscan aan'
+        subtitle: 'Vul onderstaand formulier in en wij nemen binnen 24 uur contact op om een gesprek in te plannen.', // Aangepaste subtitel
         name: 'Naam',
         email: 'E-mailadres',
         organization: 'Organisatie',
         message: 'Bericht (optioneel)',
-        send: 'Verstuur aanvraag',
+        send: 'Verstuur', // Aangepast
         close: 'Sluiten'
       }
     },
@@ -205,13 +205,13 @@ const AIRAWebsite = () => {
         language: 'Language'
       },
       form: {
-        title: 'Request your Quick Scan',
-        subtitle: 'Fill out the form below and we will contact you within 24 hours.',
+        title: 'Get in Touch', // Changed from 'Request your Quick Scan'
+        subtitle: 'Fill out the form below and we will contact you within 24 hours to schedule a consultation.', // Changed subtitle
         name: 'Name',
         email: 'Email address',
         organization: 'Organization',
         message: 'Message (optional)',
-        send: 'Send request',
+        send: 'Send', // Changed
         close: 'Close'
       }
     }
@@ -222,6 +222,11 @@ const AIRAWebsite = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
+  };
+  
+  // Functie om de MS Form te openen
+  const openQuickScanForm = () => {
+    window.open('https://forms.office.com/e/cBYsVERg2B', '_blank', 'noopener,noreferrer');
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -436,7 +441,7 @@ const AIRAWebsite = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={openQuickScanForm} // GEWIJZIGD: Roept nu direct de MS Form functie aan
               className="group relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:scale-105"></div>
@@ -449,7 +454,7 @@ const AIRAWebsite = () => {
             </button>
             
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => setShowContactForm(true)} // ONGEWIJZIGD: Deze knop opent nog steeds het contactformulier
               className="group relative px-8 py-4 rounded-xl font-semibold text-lg border border-slate-600 text-slate-300 hover:text-white hover:border-blue-500/50 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-slate-700/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
@@ -687,7 +692,7 @@ const AIRAWebsite = () => {
             </p>
             
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={openQuickScanForm} // GEWIJZIGD: Roept nu direct de MS Form functie aan
               className="group relative inline-flex items-center px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white to-slate-100 transition-all duration-300 group-hover:scale-105"></div>
@@ -780,7 +785,7 @@ const AIRAWebsite = () => {
         </div>
       </footer>
 
-      {/* Contact Form Modal */}
+      {/* Contact Form Modal (voor 'Plan gesprek' knop) */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
