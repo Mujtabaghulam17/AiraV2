@@ -224,7 +224,6 @@ const AIRAWebsite = () => {
     setIsMenuOpen(false);
   };
 
-  // Deze functies blijven bestaan zoals gevraagd, ook al worden ze niet meer gebruikt door de iframe.
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -781,16 +780,14 @@ const AIRAWebsite = () => {
         </div>
       </footer>
 
-      {/* === GEMODIFICEERD GEDEELTE START === */}
+      {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          {/* Aangepaste container voor betere weergave van de iframe */}
-          <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl w-full max-w-3xl h-[90vh] max-h-[720px] border border-slate-700 shadow-2xl flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl -z-10"></div>
+          <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl"></div>
             
-            {/* Modal Header blijft hetzelfde */}
-            <div className="relative p-6 flex-shrink-0">
-              <div className="flex justify-between items-center">
+            <div className="relative p-8">
+              <div className="flex justify-between items-center mb-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">{t.form.title}</h3>
                   <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
@@ -802,33 +799,91 @@ const AIRAWebsite = () => {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-            </div>
-            
-            {/* Iframe Container vervangt de oude form */}
-            <div className="relative flex-grow p-2 pb-4 px-4 h-full">
-              <iframe 
-                src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUQzJEQVpVQVlRVTVRQ05XTVJVTUNFUUlDSy4u&embed=true" 
-                frameBorder={0} 
-                marginWidth={0} 
-                marginHeight={0}
-                style={{
-                  border: 'none',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '0.5rem'
-                }} 
-                allowFullScreen
-                // Deze attributen zijn voor cross-browser compatibiliteit en blijven strings
-                webkitallowfullscreen="true" 
-                mozallowfullscreen="true" 
-                msallowfullscreen="true"
-              >
-              </iframe>
+              
+              <p className="text-slate-400 mb-8">{t.form.subtitle}</p>
+              
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    {t.form.name} *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-slate-500 backdrop-blur-sm"
+                    placeholder="Jouw naam"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    {t.form.email} *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-slate-500 backdrop-blur-sm"
+                    placeholder="jouw@email.com"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    {t.form.organization} *
+                  </label>
+                  <input
+                    type="text"
+                    name="organization"
+                    required
+                    value={formData.organization}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-white placeholder-slate-500 backdrop-blur-sm"
+                    placeholder="Jouw organisatie"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    {t.form.message}
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none text-white placeholder-slate-500 backdrop-blur-sm"
+                    placeholder={language === 'nl' ? 'Bijvoorbeeld: Ik wil graag een gesprek plannen over AI-training voor ons team van 25 medewerkers...' : 'For example: I would like to schedule a conversation about AI training for our team of 25 employees...'}
+                  />
+                </div>
+                
+                <div className="flex gap-4 pt-4">
+                  <button
+                    type="submit"
+                    className="flex-1 relative px-6 py-3 rounded-xl font-semibold transition-all duration-300 overflow-hidden group"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:scale-105"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    <span className="relative text-white">{t.form.send}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowContactForm(false)}
+                    className="px-6 py-3 border border-slate-600 text-slate-300 rounded-xl font-semibold hover:bg-slate-800/50 hover:text-white hover:border-slate-500 transition-all duration-300"
+                  >
+                    {t.form.close}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       )}
-      {/* === GEMODIFICEERD GEDEELTE EIND === */}
     </div>
   );
 };
