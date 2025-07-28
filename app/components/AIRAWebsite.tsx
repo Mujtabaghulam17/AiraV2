@@ -78,12 +78,10 @@ const AIRAWebsite = () => {
     setIsMenuOpen(false);
   };
 
-  // Deze functie is niet meer nodig, maar we laten hem staan om niets te breken.
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   };
   
-  // Deze functie is niet meer nodig, maar we laten hem staan om niets te breken.
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -444,14 +442,10 @@ const AIRAWebsite = () => {
       </footer>
 
       {/* --- AANGEPASTE SECTIE --- */}
-      {/* De 'showContactForm' state wordt nu gebruikt om de modal met de iframe te tonen */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          {/* De modal is groter gemaakt om de iframe goed te tonen */}
           <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl w-full max-w-4xl h-[90vh] flex flex-col border border-slate-700 shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl -z-10"></div>
-            
-            {/* Header van de modal */}
             <div className="relative p-6 flex-shrink-0">
               <div className="flex justify-between items-center">
                 <div>
@@ -466,21 +460,17 @@ const AIRAWebsite = () => {
                 </button>
               </div>
             </div>
-
-            {/* Inhoud van de modal (de iframe) */}
             <div className="flex-grow p-2 pb-6 pt-0 min-h-0">
+              {/* --- HIER IS DE CORRECTIE TOEGEPAST --- */}
               <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUQzJEQVpVQVlRVTVRQ05XTVJVTUNFUUlDSy4u&embed=true" 
-                frameBorder="0" 
-                marginWidth="0" 
-                marginHeight="0" 
+                src="https.forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUQzJEQVpVQVlRVTVRQ05XTVJVTUNFUUlDSy4u&embed=true" 
+                frameBorder={0} 
+                marginWidth={0} 
+                marginHeight={0} 
                 style={{ border: 'none', borderRadius: '0.5rem' }} 
-                allowFullScreen 
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true" 
-                msallowfullscreen="true"
+                allowFullScreen
               >
               </iframe>
             </div>
