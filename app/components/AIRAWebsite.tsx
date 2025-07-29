@@ -222,7 +222,7 @@ const AIRAWebsite = () => {
         title: 'Why AIRA?',
         subtitle: 'Strategic AI transformation that delivers competitive advantage',
         practical: 'ROI-focused: Concrete business value and measurable results within 90 days',
-        human: 'Human-augmented: AI empowers your people, doesn't replace them—increases productivity by 40%',
+        human: 'Human-augmented: AI empowers your people, does not replace them—increases productivity by 40%',
         modular: 'Phased approach: Proven methodology for risk minimization and quick wins',
         realistic: 'Business-first: No tech hype, but strategic implementation focused on your goals'
       },
