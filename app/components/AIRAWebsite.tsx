@@ -15,7 +15,7 @@ const AIRAWebsite = () => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       
-      const sections = ['home', 'about', 'usecases', 'target', 'why'];
+                const sections = ['home', 'about', 'usecases', 'mission', 'target', 'why'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -48,13 +48,14 @@ const AIRAWebsite = () => {
         home: 'Home',
         about: 'Wat doen wij?',
         usecases: 'Use Cases',
+        mission: 'Onze Missie',
         target: 'Voor wie?',
         why: 'Waarom AIRA?',
         contact: 'Contact'
       },
       hero: {
         title: 'Maak jouw organisatie AI-ready',
-        subtitle: 'Wij bieden AI-geletterdheidstrainingen voor teams, begeleide readiness-scans en adoptieprogrammas gericht op mensgerichte AI-transformatie.',
+        subtitle: 'Wij lossen het AI-geletterdheidsprobleem op door teams te transformeren van AI-angst naar AI-enthousiasme. Praktische training, begeleide implementatie en cultuurverandering.',
         cta: 'Vraag een Quickscan aan',
         ctaSecondary: 'Meer informatie',
         ctaContact: 'Contact opnemen',
@@ -93,6 +94,46 @@ const AIRAWebsite = () => {
           title: 'Decision Support',
           description: 'Slimme dashboards en voorspellende analytics voor betere besluitvorming. Verhoog forecast-accuraatheid met 45%.',
           metric: '45% betere forecasts'
+        }
+      },
+      mission: {
+        title: 'AI-Geletterdheidsprobleem Oplossen',
+        subtitle: 'De grootste uitdaging is niet de technologie—het zijn de mensen die er bang voor zijn',
+        problem: {
+          title: 'Het Probleem',
+          description: 'Organisaties investeren miljoenen in AI-technologie, maar 70% van de medewerkers gebruikt het niet. Waarom? Angst, gebrek aan kennis, en weerstand tegen verandering.'
+        },
+        solution: {
+          title: 'Onze Oplossing',
+          description: 'AIRA transformeert AI-angst naar AI-enthousiasme. We maken AI toegankelijk, begrijpelijk en relevant voor elke medewerker—van CEO tot stagiair.'
+        },
+        approach: {
+          title: 'Onze Aanpak',
+          description: 'Stap-voor-stap begeleiding die mensen veilig laat experimenteren met AI. Van awareness workshops tot hands-on training—we maken AI-adoptie een positieve ervaring.'
+        },
+        impact: {
+          title: 'Het Resultaat',
+          description: 'Teams die AI omarmen in plaats van vrezen. Verhoogde productiviteit, betere besluitvorming, en werknemers die enthousiast zijn over hun toekomst met AI.'
+        }
+      },
+      mission: {
+        title: 'Solving AI Literacy Challenge',
+        subtitle: 'The biggest challenge is not the technology—it is people who are afraid of it',
+        problem: {
+          title: 'The Problem',
+          description: 'Organizations invest millions in AI technology, but 70% of employees do not use it. Why? Fear, lack of knowledge, and resistance to change.'
+        },
+        solution: {
+          title: 'Our Solution',
+          description: 'AIRA transforms AI fear into AI enthusiasm. We make AI accessible, understandable and relevant for every employee—from CEO to intern.'
+        },
+        approach: {
+          title: 'Our Approach',
+          description: 'Step-by-step guidance that lets people safely experiment with AI. From awareness workshops to hands-on training—we make AI adoption a positive experience.'
+        },
+        impact: {
+          title: 'The Result',
+          description: 'Teams that embrace AI instead of fearing it. Increased productivity, better decision-making, and employees who are excited about their future with AI.'
         }
       },
       target: {
@@ -151,13 +192,14 @@ const AIRAWebsite = () => {
         home: 'Home',
         about: 'What we do?',
         usecases: 'Use Cases',
+        mission: 'Our Mission',
         target: 'For whom?',
         why: 'Why AIRA?',
         contact: 'Contact'
       },
       hero: {
         title: 'Make your organisation AI-ready',
-        subtitle: 'We offer AI literacy training for teams, guided readiness scans and adoption programs focused on human-centered AI transformation.',
+        subtitle: 'We solve the AI literacy problem by transforming teams from AI fear to AI enthusiasm. Practical training, guided implementation and cultural change.',
         cta: 'Request a Quick Scan',
         ctaSecondary: 'Learn more',
         ctaContact: 'Get in touch',
@@ -349,7 +391,7 @@ const AIRAWebsite = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'usecases', 'target', 'why'].map((section) => (
+              {['home', 'about', 'usecases', 'mission', 'target', 'why'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
@@ -392,7 +434,7 @@ const AIRAWebsite = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800">
             <div className="px-4 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'usecases', 'target', 'why'].map((section) => (
+              {['home', 'about', 'usecases', 'mission', 'target', 'why'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
@@ -579,6 +621,136 @@ const AIRAWebsite = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section - AI Literacy Problem */}
+      <section id="mission" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"></div>
+        
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="mission-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1" fill="#3b82f6" opacity="0.3">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
+              </circle>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#mission-pattern)" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 backdrop-blur-sm mb-6">
+              <Shield className="w-4 h-4 text-red-400 mr-2" />
+              <span className="text-sm text-red-300 font-medium">
+                {language === 'nl' ? 'Probleem & Oplossing' : 'Problem & Solution'}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+                {t.mission.title}
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
+              {t.mission.subtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Problem & Solution */}
+            <div className="space-y-8">
+              {[
+                { 
+                  title: t.mission.problem.title, 
+                  description: t.mission.problem.description,
+                  icon: Target,
+                  color: 'from-red-500 to-orange-500',
+                  bgColor: 'from-red-600/10 to-orange-600/10'
+                },
+                { 
+                  title: t.mission.solution.title, 
+                  description: t.mission.solution.description,
+                  icon: Lightbulb,
+                  color: 'from-green-500 to-emerald-500',
+                  bgColor: 'from-green-600/10 to-emerald-600/10'
+                }
+              ].map((item, index) => (
+                <div key={index} className="group relative">
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`}></div>
+                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                    
+                    <div className="relative">
+                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${item.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
+                        <item.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Approach & Impact */}
+            <div className="space-y-8">
+              {[
+                { 
+                  title: t.mission.approach.title, 
+                  description: t.mission.approach.description,
+                  icon: Rocket,
+                  color: 'from-blue-500 to-cyan-500',
+                  bgColor: 'from-blue-600/10 to-cyan-600/10'
+                },
+                { 
+                  title: t.mission.impact.title, 
+                  description: t.mission.impact.description,
+                  icon: Sparkles,
+                  color: 'from-purple-500 to-pink-500',
+                  bgColor: 'from-purple-600/10 to-pink-600/10'
+                }
+              ].map((item, index) => (
+                <div key={index} className="group relative">
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl`}></div>
+                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                    
+                    <div className="relative">
+                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${item.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
+                        <item.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Call to action within mission */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
+              <Users className="w-5 h-5 text-blue-400 mr-3" />
+              <span className="text-blue-300 font-medium">
+                {language === 'nl' 
+                  ? 'Klaar om uw team AI-geletterd te maken?' 
+                  : 'Ready to make your team AI-literate?'
+                }
+              </span>
+            </div>
           </div>
         </div>
       </section>
