@@ -15,7 +15,7 @@ const AIRAWebsite = () => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       
-      const sections = ['home', 'about', 'target', 'why'];
+      const sections = ['home', 'about', 'usecases', 'target', 'why'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -47,9 +47,9 @@ const AIRAWebsite = () => {
       nav: {
         home: 'Home',
         about: 'Wat doen wij?',
+        usecases: 'Use Cases',
         target: 'Voor wie?',
         why: 'Waarom AIRA?',
-        usecases: 'Use Cases',
         contact: 'Contact'
       },
       hero: {
@@ -76,6 +76,25 @@ const AIRAWebsite = () => {
           description: 'Praktische training die teams AI-ready maakt. Van bewustwording tot hands-on implementatie voor meetbare business impact.'
         }
       },
+      usecases: {
+        title: 'Success Stories',
+        subtitle: 'Concrete AI-implementaties die onmiddellijk business value opleveren',
+        case1: {
+          title: 'Knowledge Mining & Research',
+          description: 'Automatiseer literatuuronderzoek en data-analyse. Reduceer zoektijd met 80% en identificeer verborgen inzichten in uw bedrijfsdata.',
+          metric: '80% sneller onderzoek'
+        },
+        case2: {
+          title: 'Process Documentation',
+          description: 'AI-gestuurde documentatie voor compliance en kwaliteitsborging. Standaardiseer procedures en verminder fouten met 60%.',
+          metric: '60% minder fouten'
+        },
+        case3: {
+          title: 'Decision Support',
+          description: 'Slimme dashboards en voorspellende analytics voor betere besluitvorming. Verhoog forecast-accuraatheid met 45%.',
+          metric: '45% betere forecasts'
+        }
+      },
       target: {
         title: 'Voor wie?',
         subtitle: 'Wij helpen diverse organisaties bij hun AI-transformatie',
@@ -96,25 +115,7 @@ const AIRAWebsite = () => {
           description: 'Adviesbureaus die hun AI-expertise willen uitbreiden'
         }
       },
-      usecases: {
-        title: 'Success Stories',
-        subtitle: 'Concrete AI-implementaties die onmiddellijk business value opleveren',
-        case1: {
-          title: 'Knowledge Mining & Research',
-          description: 'Automatiseer literatuuronderzoek en data-analyse. Reduceer zoektijd met 80% en identificeer verborgen inzichten in uw bedrijfsdata.',
-          metric: '80% sneller onderzoek'
-        },
-        case2: {
-          title: 'Process Documentation',
-          description: 'AI-gestuurde documentatie voor compliance en kwaliteitsborging. Standaardiseer procedures en verminder fouten met 60%.',
-          metric: '60% minder fouten'
-        },
-        case3: {
-          title: 'Decision Support',
-          description: 'Slimme dashboards en voorspellende analytics voor betere besluitvorming. Verhoog forecast-accuraatheid met 45%.',
-          metric: '45% betere forecasts'
-        }
-      },
+      why: {
         title: 'Waarom AIRA?',
         subtitle: 'Strategische AI-transformatie die competitive advantage oplevert',
         practical: 'ROI-gericht: Concrete business value en meetbare resultaten binnen 90 dagen',
@@ -149,9 +150,9 @@ const AIRAWebsite = () => {
       nav: {
         home: 'Home',
         about: 'What we do?',
+        usecases: 'Use Cases',
         target: 'For whom?',
         why: 'Why AIRA?',
-        usecases: 'Use Cases',
         contact: 'Contact'
       },
       hero: {
@@ -178,6 +179,25 @@ const AIRAWebsite = () => {
           description: 'Practical training that makes teams AI-ready. From awareness to hands-on implementation for measurable business impact.'
         }
       },
+      usecases: {
+        title: 'Success Stories',
+        subtitle: 'Concrete AI implementations that deliver immediate business value',
+        case1: {
+          title: 'Knowledge Mining & Research',
+          description: 'Automate literature research and data analysis. Reduce search time by 80% and identify hidden insights in your business data.',
+          metric: '80% faster research'
+        },
+        case2: {
+          title: 'Process Documentation',
+          description: 'AI-driven documentation for compliance and quality assurance. Standardize procedures and reduce errors by 60%.',
+          metric: '60% fewer errors'
+        },
+        case3: {
+          title: 'Decision Support',
+          description: 'Smart dashboards and predictive analytics for better decision-making. Increase forecast accuracy by 45%.',
+          metric: '45% better forecasts'
+        }
+      },
       target: {
         title: 'For whom?',
         subtitle: 'We help diverse organizations with their AI transformation',
@@ -196,26 +216,6 @@ const AIRAWebsite = () => {
         consultancy: {
           title: 'Consultancy',
           description: 'Advisory firms that want to expand their AI expertise'
-        }
-      },
-      },
-      usecases: {
-        title: 'Success Stories',
-        subtitle: 'Concrete AI implementations that deliver immediate business value',
-        case1: {
-          title: 'Knowledge Mining & Research',
-          description: 'Automate literature research and data analysis. Reduce search time by 80% and identify hidden insights in your business data.',
-          metric: '80% faster research'
-        },
-        case2: {
-          title: 'Process Documentation',
-          description: 'AI-driven documentation for compliance and quality assurance. Standardize procedures and reduce errors by 60%.',
-          metric: '60% fewer errors'
-        },
-        case3: {
-          title: 'Decision Support',
-          description: 'Smart dashboards and predictive analytics for better decision-making. Increase forecast accuracy by 45%.',
-          metric: '45% better forecasts'
         }
       },
       why: {
@@ -492,10 +492,7 @@ const AIRAWebsite = () => {
             ].map((card, index) => (
               <div key={index} className="group relative">
                 <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm overflow-hidden">
-                  {/* Animated background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-10 transition-all duration-500`}></div>
-                  
-                  {/* Glow effect */}
                   <div className={`absolute -inset-2 bg-gradient-to-r ${card.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
                   
                   <div className="relative">
