@@ -49,6 +49,7 @@ const AIRAWebsite = () => {
         about: 'Wat doen wij?',
         target: 'Voor wie?',
         why: 'Waarom AIRA?',
+        usecases: 'Use Cases',
         contact: 'Contact'
       },
       hero: {
@@ -61,18 +62,18 @@ const AIRAWebsite = () => {
       },
       about: {
         title: 'Wat doen wij?',
-        subtitle: 'AIRA helpt organisaties toekomstbestendig worden door mensen AI-geletterd te maken',
+        subtitle: 'AIRA helpt organisaties hun AI-transformatie strategisch te benaderen—van assessment tot succesvolle implementatie',
         card1: {
-          title: 'AI-bewustzijn & training',
-          description: 'Praktische trainingen die AI begrijpelijk en relevant maken voor elk team. Geen technische jargon, maar bruikbare kennis.'
+          title: 'Strategic AI Assessment',
+          description: 'Grondige analyse van uw huidige capabilities, identificatie van AI-kansen en roadmap voor implementatie die aansluit bij uw business doelen.'
         },
         card2: {
-          title: 'Readiness-scan & advies',
-          description: 'Een grondige analyse van jullie AI-readiness met concrete adviezen en een stappenplan voor implementatie.'
+          title: 'Human-Centered Implementation',
+          description: 'Begeleide AI-adoptie die mensen empowert in plaats van vervangt. Focus op workflow-integratie en culturele verandering.'
         },
         card3: {
-          title: 'Verandering begeleiden',
-          description: 'Begeleiding bij het adopteren van AI-tools en -processen, met focus op cultuur, communicatie en gedragsverandering.'
+          title: 'AI Literacy & Enablement',
+          description: 'Praktische training die teams AI-ready maakt. Van bewustwording tot hands-on implementatie voor meetbare business impact.'
         }
       },
       target: {
@@ -95,13 +96,31 @@ const AIRAWebsite = () => {
           description: 'Adviesbureaus die hun AI-expertise willen uitbreiden'
         }
       },
-      why: {
+      usecases: {
+        title: 'Success Stories',
+        subtitle: 'Concrete AI-implementaties die onmiddellijk business value opleveren',
+        case1: {
+          title: 'Knowledge Mining & Research',
+          description: 'Automatiseer literatuuronderzoek en data-analyse. Reduceer zoektijd met 80% en identificeer verborgen inzichten in uw bedrijfsdata.',
+          metric: '80% sneller onderzoek'
+        },
+        case2: {
+          title: 'Process Documentation',
+          description: 'AI-gestuurde documentatie voor compliance en kwaliteitsborging. Standaardiseer procedures en verminder fouten met 60%.',
+          metric: '60% minder fouten'
+        },
+        case3: {
+          title: 'Decision Support',
+          description: 'Slimme dashboards en voorspellende analytics voor betere besluitvorming. Verhoog forecast-accuraatheid met 45%.',
+          metric: '45% betere forecasts'
+        }
+      },
         title: 'Waarom AIRA?',
-        subtitle: 'Wij geloven in mensgerichte AI-transformatie',
-        practical: 'Praktisch: concrete tools en methoden, geen abstracte theorieën',
-        human: 'Mensgericht: focus op mensen en cultuur, niet alleen op technologie',
-        modular: 'Modulair: op maat gemaakte oplossingen voor elke organisatie',
-        realistic: 'Realistisch: geen hype, maar haalbare stappen naar AI-readiness'
+        subtitle: 'Strategische AI-transformatie die competitive advantage oplevert',
+        practical: 'ROI-gericht: Concrete business value en meetbare resultaten binnen 90 dagen',
+        human: 'Human-augmented: AI versterkt uw mensen, vervangt ze niet—verhoogt productiviteit met 40%',
+        modular: 'Gefaseerde aanpak: Proven methodology voor risico-minimalisatie en snelle wins',
+        realistic: 'Business-first: Geen tech-hype, maar strategische implementatie gericht op uw doelen'
       },
       testimonials: {
         title: 'Vertrouwen van organisaties',
@@ -132,6 +151,7 @@ const AIRAWebsite = () => {
         about: 'What we do?',
         target: 'For whom?',
         why: 'Why AIRA?',
+        usecases: 'Use Cases',
         contact: 'Contact'
       },
       hero: {
@@ -144,18 +164,18 @@ const AIRAWebsite = () => {
       },
       about: {
         title: 'What we do?',
-        subtitle: 'AIRA helps organizations become future-ready by making people AI-literate',
+        subtitle: 'AIRA helps organizations strategically approach their AI transformation—from assessment to successful implementation',
         card1: {
-          title: 'AI awareness & training',
-          description: 'Practical training that makes AI understandable and relevant for every team. No technical jargon, but usable knowledge.'
+          title: 'Strategic AI Assessment',
+          description: 'Thorough analysis of your current capabilities, identification of AI opportunities and roadmap for implementation aligned with your business goals.'
         },
         card2: {
-          title: 'Readiness scan & advice',
-          description: 'A thorough analysis of your AI readiness with concrete advice and a roadmap for implementation.'
+          title: 'Human-Centered Implementation',
+          description: 'Guided AI adoption that empowers people instead of replacing them. Focus on workflow integration and cultural change.'
         },
         card3: {
-          title: 'Guide change',
-          description: 'Guidance in adopting AI tools and processes, focusing on culture, communication and behavioral change.'
+          title: 'AI Literacy & Enablement',
+          description: 'Practical training that makes teams AI-ready. From awareness to hands-on implementation for measurable business impact.'
         }
       },
       target: {
@@ -178,13 +198,33 @@ const AIRAWebsite = () => {
           description: 'Advisory firms that want to expand their AI expertise'
         }
       },
+      },
+      usecases: {
+        title: 'Success Stories',
+        subtitle: 'Concrete AI implementations that deliver immediate business value',
+        case1: {
+          title: 'Knowledge Mining & Research',
+          description: 'Automate literature research and data analysis. Reduce search time by 80% and identify hidden insights in your business data.',
+          metric: '80% faster research'
+        },
+        case2: {
+          title: 'Process Documentation',
+          description: 'AI-driven documentation for compliance and quality assurance. Standardize procedures and reduce errors by 60%.',
+          metric: '60% fewer errors'
+        },
+        case3: {
+          title: 'Decision Support',
+          description: 'Smart dashboards and predictive analytics for better decision-making. Increase forecast accuracy by 45%.',
+          metric: '45% better forecasts'
+        }
+      },
       why: {
         title: 'Why AIRA?',
-        subtitle: 'We believe in human-centered AI transformation',
-        practical: 'Practical: concrete tools and methods, no abstract theories',
-        human: 'Human-centered: focus on people and culture, not just technology',
-        modular: 'Modular: tailor-made solutions for every organization',
-        realistic: 'Realistic: no hype, but achievable steps towards AI readiness'
+        subtitle: 'Strategic AI transformation that delivers competitive advantage',
+        practical: 'ROI-focused: Concrete business value and measurable results within 90 days',
+        human: 'Human-augmented: AI empowers your people, doesn't replace them—increases productivity by 40%',
+        modular: 'Phased approach: Proven methodology for risk minimization and quick wins',
+        realistic: 'Business-first: No tech hype, but strategic implementation focused on your goals'
       },
       testimonials: {
         title: 'Trusted by organizations',
@@ -309,7 +349,7 @@ const AIRAWebsite = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'target', 'why'].map((section) => (
+              {['home', 'about', 'usecases', 'target', 'why'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
@@ -352,7 +392,7 @@ const AIRAWebsite = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800">
             <div className="px-4 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'target', 'why'].map((section) => (
+              {['home', 'about', 'usecases', 'target', 'why'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
@@ -467,6 +507,76 @@ const AIRAWebsite = () => {
                     </h3>
                     <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
                       {card.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section id="usecases" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                {t.usecases.title}
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              {t.usecases.subtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                icon: Brain, 
+                title: t.usecases.case1.title, 
+                description: t.usecases.case1.description, 
+                metric: t.usecases.case1.metric,
+                color: 'from-blue-500 to-cyan-500',
+                bgColor: 'from-blue-600/10 to-cyan-600/10'
+              },
+              { 
+                icon: Shield, 
+                title: t.usecases.case2.title, 
+                description: t.usecases.case2.description, 
+                metric: t.usecases.case2.metric,
+                color: 'from-purple-500 to-pink-500',
+                bgColor: 'from-purple-600/10 to-pink-600/10'
+              },
+              { 
+                icon: TrendingUp, 
+                title: t.usecases.case3.title, 
+                description: t.usecases.case3.description, 
+                metric: t.usecases.case3.metric,
+                color: 'from-green-500 to-emerald-500',
+                bgColor: 'from-green-600/10 to-emerald-600/10'
+              }
+            ].map((usecase, index) => (
+              <div key={index} className="group relative">
+                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm overflow-hidden h-full">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${usecase.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${usecase.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                  
+                  <div className="relative">
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${usecase.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
+                      <usecase.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <div className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${usecase.color} text-white text-sm font-semibold mb-4`}>
+                      {usecase.metric}
+                    </div>
+                    
+                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                      {usecase.title}
+                    </h3>
+                    <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                      {usecase.description}
                     </p>
                   </div>
                 </div>
