@@ -116,26 +116,6 @@ const AIRAWebsite = () => {
           description: 'Teams die AI omarmen in plaats van vrezen. Verhoogde productiviteit, betere besluitvorming, en werknemers die enthousiast zijn over hun toekomst met AI.'
         }
       },
-      mission: {
-        title: 'Solving AI Literacy Challenge',
-        subtitle: 'The biggest challenge is not the technology—it is people who are afraid of it',
-        problem: {
-          title: 'The Problem',
-          description: 'Organizations invest millions in AI technology, but 70% of employees do not use it. Why? Fear, lack of knowledge, and resistance to change.'
-        },
-        solution: {
-          title: 'Our Solution',
-          description: 'AIRA transforms AI fear into AI enthusiasm. We make AI accessible, understandable and relevant for every employee—from CEO to intern.'
-        },
-        approach: {
-          title: 'Our Approach',
-          description: 'Step-by-step guidance that lets people safely experiment with AI. From awareness workshops to hands-on training—we make AI adoption a positive experience.'
-        },
-        impact: {
-          title: 'The Result',
-          description: 'Teams that embrace AI instead of fearing it. Increased productivity, better decision-making, and employees who are excited about their future with AI.'
-        }
-      },
       target: {
         title: 'Voor wie?',
         subtitle: 'Wij helpen diverse organisaties bij hun AI-transformatie',
@@ -238,6 +218,26 @@ const AIRAWebsite = () => {
           title: 'Decision Support',
           description: 'Smart dashboards and predictive analytics for better decision-making. Increase forecast accuracy by 45%.',
           metric: '45% better forecasts'
+        }
+      },
+      mission: {
+        title: 'Solving AI Literacy Challenge',
+        subtitle: 'The biggest challenge is not the technology—it is people who are afraid of it',
+        problem: {
+          title: 'The Problem',
+          description: 'Organizations invest millions in AI technology, but 70% of employees do not use it. Why? Fear, lack of knowledge, and resistance to change.'
+        },
+        solution: {
+          title: 'Our Solution',
+          description: 'AIRA transforms AI fear into AI enthusiasm. We make AI accessible, understandable and relevant for every employee—from CEO to intern.'
+        },
+        approach: {
+          title: 'Our Approach',
+          description: 'Step-by-step guidance that lets people safely experiment with AI. From awareness workshops to hands-on training—we make AI adoption a positive experience.'
+        },
+        impact: {
+          title: 'The Result',
+          description: 'Teams that embrace AI instead of fearing it. Increased productivity, better decision-making, and employees who are excited about their future with AI.'
         }
       },
       target: {
