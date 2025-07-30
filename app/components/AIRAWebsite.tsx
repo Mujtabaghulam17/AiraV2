@@ -408,6 +408,15 @@ const AIRAWebsite = () => {
                 </button>
               ))}
               
+              {/* Pricing Link */}
+              <a 
+                href="/pricing" 
+                className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
+              >
+                {language === 'nl' ? 'Prijzen' : 'Pricing'}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
+              </a>
+              
               {/* Language Switcher */}
               <div className="flex items-center space-x-2 ml-4">
                 <Globe className="w-4 h-4 text-slate-400" />
@@ -443,6 +452,15 @@ const AIRAWebsite = () => {
                   {t.nav[section as keyof typeof t.nav]}
                 </button>
               ))}
+              
+              {/* Mobile Pricing Link */}
+              <a 
+                href="/pricing"
+                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+              >
+                {language === 'nl' ? 'Prijzen' : 'Pricing'}
+              </a>
+              
               <div className="px-4 py-3">
                 <button
                   onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
