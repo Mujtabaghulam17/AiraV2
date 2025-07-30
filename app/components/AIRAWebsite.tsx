@@ -999,7 +999,7 @@ const AIRAWebsite = () => {
                   <span className="group-hover:text-slate-300 transition-colors">{t.footer.phone}</span>
                 </div>
                 <a 
-                  href="https://linkedin.com/in/mujtaba-ghulam" 
+                  href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 group hover:text-blue-400 transition-colors"
