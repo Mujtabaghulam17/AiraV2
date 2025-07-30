@@ -497,19 +497,20 @@ const PricingPage = () => {
             </div>
 
             {/* Implementation Card - Popular */}
-            <div className="group relative transform hover:scale-110 transition-all duration-500">
+            <div className="group relative transform hover:scale-110 transition-all duration-500 pt-8">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500 animate-pulse"></div>
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-800/60 border border-purple-500/50 transition-all duration-500 backdrop-blur-sm h-full overflow-hidden">
-                
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="px-4 py-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold flex items-center shadow-lg shadow-purple-500/50 animate-pulse">
-                    <Sparkles className="w-4 h-4 mr-1 animate-spin" style={{ animationDuration: '3s' }} />
-                    {language === 'nl' ? 'Populairste Keuze' : 'Most Popular'}
-                  </div>
+              
+              {/* Popular Badge - Now positioned outside the main card */}
+              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold flex items-center shadow-lg shadow-purple-500/50 animate-pulse">
+                  <Sparkles className="w-4 h-4 mr-1 animate-spin" style={{ animationDuration: '3s' }} />
+                  {language === 'nl' ? 'Populairste Keuze' : 'Most Popular'}
                 </div>
-                
+              </div>
+              
+              <div className="relative p-8 pt-12 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-800/60 border border-purple-500/50 transition-all duration-500 backdrop-blur-sm h-full">
                 <div className="relative">
-                  <div className="flex items-center justify-between mb-6 mt-4">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 group-hover:scale-110 transition-all duration-300">
                       <Rocket className="w-8 h-8 text-white" />
                     </div>
