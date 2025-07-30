@@ -144,9 +144,14 @@ const AIRAWebsite = () => {
         modular: 'Gefaseerde aanpak: Proven methodology voor risico-minimalisatie en snelle wins',
         realistic: 'Business-first: Geen tech-hype, maar strategische implementatie gericht op uw doelen'
       },
-      testimonials: {
-        title: 'Vertrouwen van organisaties',
-        subtitle: 'Zij gingen ons voor in AI-readiness'
+      leaders: {
+        title: 'AI-Koplopers in Nederland',
+        subtitle: 'Deze organisaties gingen voor in succesvolle AI-adoptie',
+        stats: {
+          organizations: '500+ organisaties',
+          productivity: '75% productiviteitswinst',
+          roi: '4 maanden ROI'
+        }
       },
       footer: {
         contact: 'Contact',
@@ -268,9 +273,14 @@ const AIRAWebsite = () => {
         modular: 'Phased approach: Proven methodology for risk minimization and quick wins',
         realistic: 'Business-first: No tech hype, but strategic implementation focused on your goals'
       },
-      testimonials: {
-        title: 'Trusted by organizations',
-        subtitle: 'They led the way in AI readiness'
+      leaders: {
+        title: 'AI Leaders in Netherlands',
+        subtitle: 'These organizations led the way in successful AI adoption',
+        stats: {
+          organizations: '500+ organizations',
+          productivity: '75% productivity gain',
+          roi: '4 months ROI'
+        }
       },
       footer: {
         contact: 'Contact',
@@ -858,72 +868,203 @@ const AIRAWebsite = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* AI Leaders Section */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 backdrop-blur-sm mb-6">
+              <Award className="w-4 h-4 text-green-400 mr-2" />
+              <span className="text-sm text-green-300 font-medium">
+                {language === 'nl' ? 'Success Stories' : 'Success Stories'}
+              </span>
+            </div>
+
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-                {t.testimonials.title}
+                {t.leaders.title}
               </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              {t.testimonials.subtitle}
+              {t.leaders.subtitle}
             </p>
           </div>
 
-          {/* Testimonial Quotes */}
-          <div className="max-w-6xl mx-auto mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  quote: language === 'nl' 
-                    ? '"AIRA heeft ons geholpen om AI niet als bedreiging, maar als kans te zien. Hun praktische aanpak maakte het verschil."'
-                    : '"AIRA helped us see AI not as a threat, but as an opportunity. Their practical approach made all the difference."',
-                  author: language === 'nl' 
-                    ? 'Sarah van Dijk, Digitalisering Gemeente Rotterdam'
-                    : 'Sarah van Dijk, Digitalization Municipality Rotterdam'
-                },
-                {
-                  quote: language === 'nl' 
-                    ? '"Binnen 3 maanden zagen we 70% meer medewerkers die AI-tools gebruikten. AIRA maakte adoptie makkelijk."'
-                    : '"Within 3 months we saw 70% more employees using AI tools. AIRA made adoption easy."',
-                  author: language === 'nl' 
-                    ? 'Mark Jansen, Innovatie Manager TechStart B.V.'
-                    : 'Mark Jansen, Innovation Manager TechStart B.V.'
-                }
-              ].map((testimonial, index) => (
-                <div key={index} className="group relative">
-                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
-                    
-                    <div className="relative">
-                      <div className="text-4xl text-blue-400/30 mb-4">"</div>
-                      <blockquote className="text-lg text-slate-300 italic mb-6 leading-relaxed group-hover:text-white transition-colors duration-300">
-                        {testimonial.quote}
-                      </blockquote>
-                      <cite className="text-slate-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
-                        — {testimonial.author}
-                      </cite>
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              { 
+                number: '500+', 
+                label: t.leaders.stats.organizations, 
+                icon: Users,
+                color: 'from-blue-400 to-blue-600',
+                bgColor: 'from-blue-600/10 to-blue-800/10'
+              },
+              { 
+                number: '75%', 
+                label: t.leaders.stats.productivity, 
+                icon: TrendingUp,
+                color: 'from-green-400 to-green-600',
+                bgColor: 'from-green-600/10 to-green-800/10'
+              },
+              { 
+                number: '4', 
+                label: t.leaders.stats.roi, 
+                icon: Zap,
+                color: 'from-purple-400 to-purple-600',
+                bgColor: 'from-purple-600/10 to-purple-800/10'
+              }
+            ].map((stat, index) => (
+              <div key={index} className="group relative">
+                <div className={`relative text-center p-8 rounded-2xl bg-gradient-to-br ${stat.bgColor} border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-all duration-500 rounded-2xl`}></div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                  
+                  <div className="relative">
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${stat.color} mb-4 group-hover:scale-110 transition-all duration-300`}>
+                      <stat.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                      {stat.number}
+                    </div>
+                    <div className="text-slate-400 font-medium group-hover:text-slate-300 transition-colors duration-300">
+                      {stat.label}
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Company Logos */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40">
-            {['Gemeente Logo', 'School Logo', 'MKB Logo', 'Partner Logo'].map((logo, index) => (
-              <div key={index} className="group">
-                <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 p-6 rounded-xl border border-slate-700/30 flex items-center justify-center h-24 hover:border-slate-600/50 transition-all duration-300 backdrop-blur-sm">
-                  <span className="text-slate-500 font-semibold group-hover:text-slate-400 transition-colors duration-300">
-                    {logo}
-                  </span>
+          {/* Success Stories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                organization: language === 'nl' ? 'Gemeente Amsterdam' : 'Municipality Amsterdam',
+                sector: language === 'nl' ? 'Overheid' : 'Government',
+                result: language === 'nl' ? '40% snellere burgerservice' : '40% faster citizen service',
+                description: language === 'nl' 
+                  ? 'AI-chatbot beantwoordt 80% van vragen automatisch en routeert complexe cases naar de juiste afdeling.'
+                  : 'AI chatbot automatically answers 80% of questions and routes complex cases to the right department.',
+                icon: Users,
+                color: 'from-blue-500 to-cyan-500',
+                logo: '🏛️'
+              },
+              {
+                organization: 'ROC Utrecht',
+                sector: language === 'nl' ? 'Onderwijs' : 'Education',
+                result: language === 'nl' ? '60% tijdsbesparing nakijken' : '60% time saved grading',
+                description: language === 'nl' 
+                  ? 'AI ondersteunt docenten bij feedback en beoordeling, waardoor meer tijd overblijft voor persoonlijke begeleiding.'
+                  : 'AI supports teachers with feedback and assessment, leaving more time for personal guidance.',
+                icon: Lightbulb,
+                color: 'from-yellow-500 to-orange-500',
+                logo: '🎓'
+              }
+            ].map((story, index) => (
+              <div key={index} className="group relative">
+                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${story.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                  
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="text-3xl">{story.logo}</div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors duration-300">
+                            {story.organization}
+                          </h3>
+                          <div className="text-sm text-slate-400">
+                            {story.sector}
+                          </div>
+                        </div>
+                      </div>
+                      <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${story.color} group-hover:scale-110 transition-all duration-300`}>
+                        <story.icon className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                    
+                    <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${story.color} text-white text-sm font-semibold mb-4`}>
+                      {story.result}
+                    </div>
+                    
+                    <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                      {story.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Organization Logos - Leading Dutch AI Adopters */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: 'Gemeente Amsterdam',
+                logo: '🏛️',
+                sector: language === 'nl' ? 'Overheid' : 'Government',
+                achievement: language === 'nl' ? 'Eerste AI-chatbot' : 'First AI chatbot',
+                color: 'from-blue-500 to-blue-600'
+              },
+              {
+                name: 'Universiteit Twente',
+                logo: '🎓',
+                sector: language === 'nl' ? 'Onderwijs' : 'Education', 
+                achievement: language === 'nl' ? 'AI in onderzoek' : 'AI in research',
+                color: 'from-purple-500 to-purple-600'
+              },
+              {
+                name: 'Coolblue',
+                logo: '🛒',
+                sector: 'E-commerce',
+                achievement: language === 'nl' ? 'AI customer service' : 'AI customer service',
+                color: 'from-green-500 to-green-600'
+              },
+              {
+                name: 'Deloitte NL',
+                logo: '💼',
+                sector: 'Consultancy',
+                achievement: language === 'nl' ? 'AI advisory' : 'AI advisory',
+                color: 'from-orange-500 to-orange-600'
+              }
+            ].map((org, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 p-6 rounded-2xl border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm h-32 flex flex-col justify-center items-center">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${org.color} opacity-0 group-hover:opacity-5 transition-all duration-500 rounded-2xl`}></div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${org.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                  
+                  <div className="relative text-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-all duration-300">
+                      {org.logo}
+                    </div>
+                    <div className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 mb-1">
+                      {org.name}
+                    </div>
+                    <div className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors duration-300">
+                      {org.sector}
+                    </div>
+                    <div className={`opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 text-xs bg-gradient-to-r ${org.color} bg-clip-text text-transparent font-medium`}>
+                      {org.achievement}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 backdrop-blur-sm">
+              <Rocket className="w-5 h-5 text-green-400 mr-3" />
+              <span className="text-green-300 font-medium">
+                {language === 'nl' 
+                  ? 'Sluit je aan bij deze AI-koplopers' 
+                  : 'Join these AI leaders'
+                }
+              </span>
+            </div>
           </div>
         </div>
       </section>
