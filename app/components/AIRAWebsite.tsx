@@ -150,7 +150,7 @@ const AIRAWebsite = () => {
       },
       footer: {
         contact: 'Contact',
-        email: 'info@aira.nl',
+        email: 'info@aira-ai.nl',
         phone: '+31 6 12345678',
         privacy: 'Privacyvoorwaarden',
         terms: 'Algemene voorwaarden',
