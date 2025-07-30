@@ -110,7 +110,6 @@ const PricingPage = () => {
           cta: 'Vraag Begeleiding aan',
           ideal: 'Ideaal voor: Ongoing support, complexe implementaties'
         },
-        guarantee: 'Niet tevreden? Geld terug garantie binnen 30 dagen',
         consultation: 'Gratis 30-minuten consultatiegesprek'
       },
       faq: {
@@ -216,7 +215,6 @@ const PricingPage = () => {
           cta: 'Request Guidance',
           ideal: 'Ideal for: Ongoing support, complex implementations'
         },
-        guarantee: 'Not satisfied? Money back guarantee within 30 days',
         consultation: 'Free 30-minute consultation call'
       },
       faq: {
@@ -680,16 +678,9 @@ const PricingPage = () => {
             </div>
           </div>
 
-          {/* Guarantee & Consultation */}
-         <div className="text-center mb-16">
-  <div className="max-w-2xl mx-auto">
-    <div className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
-      <Users className="w-6 h-6 text-blue-400 mr-3" />
-      <span className="text-blue-300 font-medium">{t.pricing.consultation}</span>
-    </div>
-  </div>
-</div>
-              
+          {/* Consultation only */}
+          <div className="text-center mb-16">
+            <div className="max-w-2xl mx-auto">
               <div className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
                 <Users className="w-6 h-6 text-blue-400 mr-3" />
                 <span className="text-blue-300 font-medium">{t.pricing.consultation}</span>
