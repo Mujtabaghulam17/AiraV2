@@ -681,12 +681,14 @@ const PricingPage = () => {
           </div>
 
           {/* Guarantee & Consultation */}
-          <div className="text-center mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 backdrop-blur-sm">
-                <Shield className="w-6 h-6 text-green-400 mr-3" />
-                <span className="text-green-300 font-medium">{t.pricing.guarantee}</span>
-              </div>
+         <div className="text-center mb-16">
+  <div className="max-w-2xl mx-auto">
+    <div className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
+      <Users className="w-6 h-6 text-blue-400 mr-3" />
+      <span className="text-blue-300 font-medium">{t.pricing.consultation}</span>
+    </div>
+  </div>
+</div>
               
               <div className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
                 <Users className="w-6 h-6 text-blue-400 mr-3" />
