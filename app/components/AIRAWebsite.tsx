@@ -396,12 +396,15 @@ const AIRAWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center group">
-              <div className="relative">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="relative cursor-pointer"
+              >
                 <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
                   AIRA
                 </span>
                 <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 blur-xl -z-10"></div>
-              </div>
+              </button>
             </div>
             
             {/* Desktop Menu */}
