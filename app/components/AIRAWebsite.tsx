@@ -9,6 +9,7 @@ const AIRAWebsite = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [showContactForm, setShowContactForm] = useState(false);
+  const [formType, setFormType] = useState('quickscan'); // 'quickscan' or 'consultation'
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -163,7 +164,9 @@ const AIRAWebsite = () => {
       },
       form: {
         title: 'Vraag jouw Quickscan aan',
+        titleConsultation: 'Plan een vrijblijvend gesprek',
         subtitle: 'Vul onderstaand formulier in en wij nemen binnen 24 uur contact op.',
+        subtitleConsultation: 'Kies een datum en tijd die jou uitkomt voor een persoonlijk gesprek.',
         name: 'Naam',
         email: 'E-mailadres',
         organization: 'Organisatie',
@@ -292,7 +295,9 @@ const AIRAWebsite = () => {
       },
       form: {
         title: 'Request your Quick Scan',
+        titleConsultation: 'Schedule a free consultation',
         subtitle: 'Fill out the form below and we will contact you within 24 hours.',
+        subtitleConsultation: 'Choose a date and time that suits you for a personal conversation.',
         name: 'Name',
         email: 'Email address',
         organization: 'Organization',
@@ -511,7 +516,10 @@ const AIRAWebsite = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => {
+                setFormType('quickscan');
+                setShowContactForm(true);
+              }}
               className="group relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:scale-105"></div>
@@ -524,7 +532,10 @@ const AIRAWebsite = () => {
             </button>
             
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => {
+                setFormType('consultation');
+                setShowContactForm(true);
+              }}
               className="group relative px-8 py-4 rounded-xl font-semibold text-lg border border-slate-600 text-slate-300 hover:text-white hover:border-blue-500/50 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-slate-700/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
@@ -1090,7 +1101,10 @@ const AIRAWebsite = () => {
             </p>
             
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => {
+                setFormType('quickscan');
+                setShowContactForm(true);
+              }}
               className="group relative inline-flex items-center px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white to-slate-100 transition-all duration-300 group-hover:scale-105"></div>
@@ -1192,7 +1206,9 @@ const AIRAWebsite = () => {
             <div className="relative">
               <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{t.form.title}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {formType === 'quickscan' ? t.form.title : t.form.titleConsultation}
+                  </h3>
                   <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </div>
                 <button
@@ -1205,7 +1221,10 @@ const AIRAWebsite = () => {
               
               <div className="p-2">
                 <iframe 
-                  src="https://forms.cloud.microsoft/r/i49jV2AvRa?embed=true" 
+                  src={formType === 'quickscan' 
+                    ? "https://forms.cloud.microsoft/r/i49jV2AvRa?embed=true"
+                    : "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUNUxRSlNFNDgwRjQ2R0dNQzRBOE0zNFYyVS4u&embed=true"
+                  }
                   width="100%" 
                   height="600"
                   style={{ 
@@ -1214,7 +1233,7 @@ const AIRAWebsite = () => {
                     backgroundColor: 'transparent'
                   }}
                   allowFullScreen 
-                  title="AIRA Quickscan Aanvraag"
+                  title={formType === 'quickscan' ? "AIRA Quickscan Aanvraag" : "AIRA Gesprek Plannen"}
                 />
               </div>
             </div>
