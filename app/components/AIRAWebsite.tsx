@@ -52,6 +52,7 @@ const AIRAWebsite = () => {
         mission: 'Onze Missie',
         target: 'Voor wie?',
         why: 'Waarom AIRA?',
+        blog: 'Blog',
         contact: 'Contact'
       },
       hero: {
@@ -183,6 +184,7 @@ const AIRAWebsite = () => {
         mission: 'Our Mission',
         target: 'For whom?',
         why: 'Why AIRA?',
+        blog: 'Blog',
         contact: 'Contact'
       },
       hero: {
@@ -433,6 +435,13 @@ const AIRAWebsite = () => {
               >
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
+              </a>
+               {/* Blog Link */}
+              <a 
+                href="/blog" 
+                className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
+              >
+                Blog
               </a>
               
               {/* Language Switcher */}
