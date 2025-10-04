@@ -487,6 +487,12 @@ const AIRAWebsite = () => {
               >
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
               </a>
+              <a 
+  href="/blog"
+  className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+>
+  Blog
+</a>
               
               <div className="px-4 py-3">
                 <button
