@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
-import { OrganizationSchema } from '@/components/StructuredData';
+import { OrganizationSchema } from '@/app/components/StructuredData';
 
 interface BlogPostPageProps {
   params: {
