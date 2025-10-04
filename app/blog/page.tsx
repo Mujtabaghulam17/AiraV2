@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { OrganizationSchema } from '@/app/components/StructuredData';
+import { OrganizationSchema } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
   title: 'Blog - AI Kennis & Inzichten',
