@@ -1009,13 +1009,13 @@ const AIRAWebsite = () => {
                             {story.organization}
                           </h3>
                           <div className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 mb-1">
-                      {org.name}
+                      {story.name}
                     </div>
                     <div className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors duration-300">
-                      {org.sector}
+                      {story.sector}
                     </div>
-                    <div className={`opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 text-xs bg-gradient-to-r ${org.color} bg-clip-text text-transparent font-medium`}>
-                      {org.achievement}
+                    <div className={`opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 text-xs bg-gradient-to-r ${story.color} bg-clip-text text-transparent font-medium`}>
+                      {story.achievement}
                     </div>
                   </div>
                 </div>
@@ -1202,4 +1202,4 @@ const AIRAWebsite = () => {
   );
 };
 
-export default AIRAWebsite; text-slate-400">
+export default AIRAWebsite;
