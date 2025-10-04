@@ -409,7 +409,7 @@ const AIRAWebsite = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'usecases', 'mission', 'target', 'why'].map((section) => (
+              {['home', 'about', 'usecases', 'mission', 'target', 'why', 'blog'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
