@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aira-ai.nl/sitemap.xml
+
+# Host
+Host: https://aira-ai.nl
