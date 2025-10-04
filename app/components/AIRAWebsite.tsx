@@ -3,20 +3,23 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Users, Target, Award, ArrowRight, Menu, X, Globe, CheckCircle, Brain, Lightbulb, TrendingUp, Sparkles, Zap, Shield, Rocket } from 'lucide-react';
 
+type Language = 'nl' | 'en';
+type FormType = 'quickscan' | 'consultation';
+
 const AIRAWebsite = () => {
-  const [language, setLanguage] = useState('nl');
+  const [language, setLanguage] = useState<Language>('nl');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [showContactForm, setShowContactForm] = useState(false);
-  const [formType, setFormType] = useState('quickscan'); // 'quickscan' or 'consultation'
+  const [formType, setFormType] = useState<FormType>('quickscan');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       
-                const sections = ['home', 'about', 'usecases', 'mission', 'target', 'why'];
+      const sections = ['home', 'about', 'usecases', 'mission', 'target', 'why'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -308,7 +311,7 @@ const AIRAWebsite = () => {
         close: 'Close'
       }
     }
-  };
+  } as const;
 
   const t = translations[language];
 
@@ -436,7 +439,8 @@ const AIRAWebsite = () => {
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
               </a>
-               {/* Blog Link */}
+              
+              {/* Blog Link */}
               <a 
                 href="/blog" 
                 className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
@@ -488,11 +492,11 @@ const AIRAWebsite = () => {
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
               </a>
               <a 
-  href="/blog"
-  className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
->
-  Blog
-</a>
+                href="/blog"
+                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+              >
+                Blog
+              </a>
               
               <div className="px-4 py-3">
                 <button
@@ -1004,7 +1008,201 @@ const AIRAWebsite = () => {
                           <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors duration-300">
                             {story.organization}
                           </h3>
-                          <div className="text-sm text-slate-400">
+                          <div className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 mb-1">
+                      {org.name}
+                    </div>
+                    <div className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors duration-300">
+                      {org.sector}
+                    </div>
+                    <div className={`opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 text-xs bg-gradient-to-r ${org.color} bg-clip-text text-transparent font-medium`}>
+                      {org.achievement}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 backdrop-blur-sm">
+              <Rocket className="w-5 h-5 text-green-400 mr-3" />
+              <span className="text-green-300 font-medium">
+                {language === 'nl' 
+                  ? 'Sluit je aan bij deze AI-koplopers' 
+                  : 'Join these AI leaders'
+                }
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.3),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(139,92,246,0.3),transparent_50%)]"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="relative">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to get started?'}
+            </h2>
+            <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+              {language === 'nl' 
+                ? 'Vraag vandaag nog een gratis quickscan aan en ontdek hoe AI-ready jouw organisatie is.'
+                : 'Request a free quick scan today and discover how AI-ready your organization is.'
+              }
+            </p>
+            
+            <button 
+              onClick={() => {
+                setFormType('quickscan');
+                setShowContactForm(true);
+              }}
+              className="group relative inline-flex items-center px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-slate-100 transition-all duration-300 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="relative flex items-center justify-center text-slate-900">
+                <Sparkles className="mr-3 w-5 h-5 text-blue-600" />
+                {t.hero.cta}
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"></div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 py-16 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center group">
+                <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  AIRA
+                </span>
+              </div>
+              <p className="text-slate-400 leading-relaxed max-w-sm">
+                {language === 'nl' 
+                  ? 'Artificial Intelligence Readiness & Adaptability - Maak jouw organisatie AI-ready met mensgerichte training en begeleiding.'
+                  : 'Artificial Intelligence Readiness & Adaptability - Make your organization AI-ready with human-centered training and guidance.'
+                }
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white">{t.footer.contact}</h4>
+              <div className="space-y-3 text-slate-400">
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
+                    <span className="text-xs">@</span>
+                  </div>
+                  <span className="group-hover:text-slate-300 transition-colors">{t.footer.email}</span>
+                </div>
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
+                    <span className="text-xs">📞</span>
+                  </div>
+                  <span className="group-hover:text-slate-300 transition-colors">{t.footer.phone}</span>
+                </div>
+                <a 
+                  href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 group hover:text-blue-400 transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                    <span className="text-xs">in</span>
+                  </div>
+                  <span>LinkedIn Profiel</span>
+                </a>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white">{t.footer.language}</h4>
+              <button
+                onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+                className="flex items-center space-x-3 text-slate-400 hover:text-blue-400 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
+                  <Globe className="w-4 h-4" />
+                </div>
+                <span>{language === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}</span>
+              </button>
+            </div>
+          </div>
+          
+          <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-slate-500 text-sm">
+              © 2025 AIRA. Alle rechten voorbehouden.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
+                {t.footer.privacy}
+              </a>
+              <a href="#" className="text-slate-500 hover:text-slate-400 text-sm transition-colors">
+                {t.footer.terms}
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Microsoft Forms Modal */}
+      {showContactForm && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-slate-700 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl"></div>
+            
+            <div className="relative">
+              <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {formType === 'quickscan' ? t.form.title : t.form.titleConsultation}
+                  </h3>
+                  <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                </div>
+                <button
+                  onClick={() => setShowContactForm(false)}
+                  className="p-2 text-slate-400 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-300"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="p-2">
+                <iframe 
+                  src={formType === 'quickscan' 
+                    ? "https://forms.cloud.microsoft/r/i49jV2AvRa?embed=true"
+                    : "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUNUxRSlNFNDgwRjQ2R0dNQzRBOE0zNFYyVS4u&embed=true"
+                  }
+                  width="100%" 
+                  height="600"
+                  style={{ 
+                    border: 'none', 
+                    borderRadius: '12px',
+                    backgroundColor: 'transparent'
+                  }}
+                  allowFullScreen 
+                  title={formType === 'quickscan' ? "AIRA Quickscan Aanvraag" : "AIRA Gesprek Plannen"}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AIRAWebsite; text-slate-400">
                             {story.sector}
                           </div>
                         </div>
@@ -1058,6 +1256,18 @@ const AIRAWebsite = () => {
                 achievement: language === 'nl' ? 'AI advisory' : 'AI advisory',
                 color: 'from-orange-500 to-orange-600'
               }
+            ].map((org, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 p-6 rounded-2xl border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm h-32 flex flex-col justify-center items-center">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${org.color} opacity-0 group-hover:opacity-5 transition-all duration-500 rounded-2xl`}></div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${org.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
+                  
+                  <div className="relative text-center">
+                    <div className="text-3xl mb-2 group-hover:scale-110 transition-all duration-300">
+                      {org.logo}
+                    </div>
+                    <div className="text-sm
+                      
             ].map((org, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 p-6 rounded-2xl border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm h-32 flex flex-col justify-center items-center">
@@ -1243,7 +1453,7 @@ const AIRAWebsite = () => {
                     ? "https://forms.cloud.microsoft/r/i49jV2AvRa?embed=true"
                     : "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gBVhUFUNUxRSlNFNDgwRjQ2R0dNQzRBOE0zNFYyVS4u&embed=true"
                   }
-                  width="100%" 
+                  width="100%"   
                   height="600"
                   style={{ 
                     border: 'none', 
