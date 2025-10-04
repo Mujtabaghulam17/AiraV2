@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: 'Praktische artikelen over AI-implementatie, readiness en training voor organisaties.',
 };
 
+
 export default async function BlogPage() {
   const posts = await getAllPosts();
 
