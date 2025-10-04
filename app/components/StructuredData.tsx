@@ -1,8 +1,14 @@
 import React from 'react';
-import { Organization, WithContext, WebSite, Service } from 'schema-dts';
+
+// Types zelf definiëren (zonder externe package)
+type JsonLd = {
+  '@context': string;
+  '@type': string;
+  [key: string]: any;
+};
 
 export function OrganizationSchema() {
-  const jsonLd: WithContext<Organization> = {
+  const jsonLd: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'AIRA',
@@ -51,7 +57,7 @@ export function OrganizationSchema() {
 }
 
 export function WebsiteSchema() {
-  const jsonLd: WithContext<WebSite> = {
+  const jsonLd: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'AIRA',
@@ -88,7 +94,7 @@ export function ServiceSchema({
   price: string;
   url: string;
 }) {
-  const jsonLd: WithContext<Service> = {
+  const jsonLd: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
