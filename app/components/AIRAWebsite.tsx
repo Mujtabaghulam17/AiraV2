@@ -1225,7 +1225,7 @@ export default AIRAWebsite; text-slate-400">
             ))}
           </div>
 
-          {/* Organization Logos - Leading Dutch AI Adopters */}
+{/* Organization Logos - Leading Dutch AI Adopters */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
@@ -1265,36 +1265,7 @@ export default AIRAWebsite; text-slate-400">
                   <div className="relative text-center">
                     <div className="text-3xl mb-2 group-hover:scale-110 transition-all duration-300">
                       {org.logo}
-                    </div>
-                    <div className="text-sm
-                      
-            ].map((org, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 p-6 rounded-2xl border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm h-32 flex flex-col justify-center items-center">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${org.color} opacity-0 group-hover:opacity-5 transition-all duration-500 rounded-2xl`}></div>
-                  <div className={`absolute -inset-2 bg-gradient-to-r ${org.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
-                  
-                  <div className="relative text-center">
-                    <div className="text-3xl mb-2 group-hover:scale-110 transition-all duration-300">
-                      {org.logo}
-                    </div>
-                    <div className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 mb-1">
-                      {org.name}
-                    </div>
-                    <div className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors duration-300">
-                      {org.sector}
-                    </div>
-                    <div className={`opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 text-xs bg-gradient-to-r ${org.color} bg-clip-text text-transparent font-medium`}>
-                      {org.achievement}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 backdrop-blur-sm">
               <Rocket className="w-5 h-5 text-green-400 mr-3" />
               <span className="text-green-300 font-medium">
@@ -1304,6 +1275,46 @@ export default AIRAWebsite; text-slate-400">
                 }
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.3),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(139,92,246,0.3),transparent_50%)]"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="relative">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to get started?'}
+            </h2>
+            <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+              {language === 'nl' 
+                ? 'Vraag vandaag nog een gratis quickscan aan en ontdek hoe AI-ready jouw organisatie is.'
+                : 'Request a free quick scan today and discover how AI-ready your organization is.'
+              }
+            </p>
+            
+            <button 
+              onClick={() => {
+                setFormType('quickscan');
+                setShowContactForm(true);
+              }}
+              className="group relative inline-flex items-center px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-slate-100 transition-all duration-300 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="relative flex items-center justify-center text-slate-900">
+                <Sparkles className="mr-3 w-5 h-5 text-blue-600" />
+                {t.hero.cta}
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"></div>
+            </button>
           </div>
         </div>
       </section>
