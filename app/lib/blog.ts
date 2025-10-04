@@ -18,6 +18,11 @@ export interface BlogPost {
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
+  // Check if directory exists, return empty array if not
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = await Promise.all(
     fileNames
@@ -33,7 +38,6 @@ export async function getAllPosts(): Promise<BlogPost[]> {
           .process(content);
         const contentHtml = processedContent.toString();
 
-        // Bereken leestijd (200 woorden per minuut)
         const wordCount = content.split(/\s+/).length;
         const readTime = Math.ceil(wordCount / 200);
 
