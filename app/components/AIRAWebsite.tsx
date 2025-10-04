@@ -55,7 +55,6 @@ const AIRAWebsite = () => {
         mission: 'Onze Missie',
         target: 'Voor wie?',
         why: 'Waarom AIRA?',
-        blog: 'Blog',
         contact: 'Contact'
       },
       hero: {
@@ -187,7 +186,6 @@ const AIRAWebsite = () => {
         mission: 'Our Mission',
         target: 'For whom?',
         why: 'Why AIRA?',
-        blog: 'Blog',
         contact: 'Contact'
       },
       hero: {
@@ -414,22 +412,22 @@ const AIRAWebsite = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'usecases', 'mission', 'target', 'why', 'blog'].map((section) => (
-                <button 
-                  key={section}
-                  onClick={() => scrollToSection(section)} 
-                  className={`relative px-4 py-2 rounded-lg transition-all duration-300 group ${
-                    activeSection === section 
-                      ? 'text-blue-400 font-medium' 
-                      : 'text-slate-300 hover:text-blue-400'
-                  }`}
-                >
-                  {t.nav[section as keyof typeof t.nav]}
-                  <div className={`absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 ${
-                    activeSection === section ? 'opacity-100 scale-100' : 'opacity-0 scale-95 group-hover:opacity-50 group-hover:scale-100'
-                  }`}></div>
-                </button>
-              ))}
+  {['home', 'about', 'usecases', 'mission', 'target', 'why'].map((section) => (
+    <button 
+      key={section}
+      onClick={() => scrollToSection(section)} 
+      className={`relative px-4 py-2 rounded-lg transition-all duration-300 group ${
+        activeSection === section 
+          ? 'text-blue-400 font-medium' 
+          : 'text-slate-300 hover:text-blue-400'
+      }`}
+                 >
+      {t.nav[section as keyof typeof t.nav]}
+      <div className={`absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 ${
+        activeSection === section ? 'opacity-100 scale-100' : 'opacity-0 scale-95 group-hover:opacity-50 group-hover:scale-100'
+      }`}></div>
+    </button>
+  ))}
               
               {/* Pricing Link */}
               <a 
@@ -440,13 +438,14 @@ const AIRAWebsite = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
               </a>
               
-              {/* Blog Link */}
-              <a 
-                href="/blog" 
-                className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
-              >
-                Blog
-              </a>
+              {/* Blog Link - External */}
+  <a 
+    href="/blog" 
+    className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
+  >
+    Blog
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
+  </a>
               
               {/* Language Switcher */}
               <div className="flex items-center space-x-2 ml-4">
@@ -491,12 +490,13 @@ const AIRAWebsite = () => {
               >
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
               </a>
-              <a 
-                href="/blog"
-                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
-              >
-                Blog
-              </a>
+              {/* Mobile Blog Link */}
+      <a 
+        href="/blog"
+        className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+      >
+        Blog
+      </a>
               
               <div className="px-4 py-3">
                 <button
