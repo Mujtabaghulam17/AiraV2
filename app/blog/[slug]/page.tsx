@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getAllPosts } from '@/lib/blog';
+import { getPostBySlug, getAllPosts } from '@/app/lib/blog';
 import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 import { OrganizationSchema } from '@/app/components/StructuredData';
 
