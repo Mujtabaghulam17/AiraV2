@@ -10,7 +10,6 @@ const PricingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [showContactForm, setShowContactForm] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState('');
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -41,10 +40,10 @@ const PricingPage = () => {
           participants: 'Max 15 deelnemers',
           description: 'Creëer AI-bewustzijn en enthousiasme in jouw team',
           features: [
-            'AI fundamentals & mogelijkheden',
+            'AI fundamentals en mogelijkheden',
             'Sector-specifieke voorbeelden',
             'Interactieve hands-on sessies',
-            'Angst wegnemen & vertrouwen opbouwen',
+            'Angst wegnemen en vertrouwen opbouwen',
             'Digitaal cursusmateriaal',
             'Q&A met AI-expert',
             'Deelname certificaat'
@@ -59,7 +58,6 @@ const PricingPage = () => {
           unit: 'per persoon',
           duration: 'Hele dag (8 uur)',
           participants: 'Max 12 deelnemers',
-          popular: true,
           description: 'Direct aan de slag met AI in jullie workflows',
           features: [
             'Praktische AI-tools implementatie',
@@ -76,7 +74,7 @@ const PricingPage = () => {
           savings: 'Groepskorting: 10+ personen = 15% korting'
         },
         enterprise: {
-          name: 'AI Strategy & Roadmap',
+          name: 'AI Strategy en Roadmap',
           tagline: 'Voor organisaties',
           price: 'Vanaf €5.500',
           unit: 'per organisatie',
@@ -87,8 +85,8 @@ const PricingPage = () => {
             'Grondige organisatie-analyse',
             'AI-readiness assessment alle afdelingen',
             'Strategische 12-maanden roadmap',
-            'ROI projecties & business case',
-            'Implementatie prioritering & tijdlijn',
+            'ROI projecties en business case',
+            'Implementatie prioritering en tijdlijn',
             'Management presentatie',
             'Change management strategie',
             'Quarterly review sessies (3 maanden)'
@@ -108,7 +106,7 @@ const PricingPage = () => {
           description: 'Strategisch advies en technische expertise',
           features: [
             'Remote of on-site',
-            'Toolselectie & evaluatie',
+            'Toolselectie en evaluatie',
             'Implementatie planning',
             'ROI optimalisatie'
           ]
@@ -124,30 +122,6 @@ const PricingPage = () => {
             'Troubleshooting',
             'Process optimalisatie'
           ]
-        },
-        customTraining: {
-          name: 'Maatwerk Training',
-          price: 'Op aanvraag',
-          description: 'Volledig op maat gemaakte training voor jouw sector',
-          features: [
-            'Custom curriculum',
-            'Sector-specifieke cases',
-            'Flexible scheduling',
-            'Team van 5-50 personen'
-          ]
-        }
-      },
-      comparison: {
-        title: 'Vergelijk Pakketten',
-        features: {
-          training: 'Training Hours',
-          support: 'Support Duration',
-          materials: 'Course Materials',
-          certificate: 'Certificate',
-          followup: 'Follow-up Sessions',
-          tools: 'AI Tools Access',
-          consulting: 'Consulting Hours',
-          customization: 'Custom Content'
         }
       },
       pricing: {
@@ -155,19 +129,19 @@ const PricingPage = () => {
         subtitle: 'Transparant, eerlijk en marktconform',
         quality: {
           title: 'Premium Kwaliteit',
-          description: 'Ervaren trainers met jarenlange praktijkervaring in AI-implementatie'
+          description: 'Ervaren trainers met jarenlange praktijkervaring'
         },
         roi: {
           title: 'Meetbare ROI',
-          description: 'Gemiddeld 4 maanden tot positieve ROI bij correcte implementatie'
+          description: 'Gemiddeld 4 maanden tot positieve ROI'
         },
         support: {
           title: 'Inclusief Support',
-          description: '30 dagen e-mail support en follow-up sessies bij alle trainingen'
+          description: '30 dagen e-mail support bij alle trainingen'
         },
         certificate: {
           title: 'Erkend Certificaat',
-          description: 'Officieel AIRA certificaat voor alle afgeronde trainingen'
+          description: 'Officieel AIRA certificaat'
         }
       },
       faq: {
@@ -175,35 +149,22 @@ const PricingPage = () => {
         items: [
           {
             q: 'Zijn de prijzen inclusief BTW?',
-            a: 'Alle genoemde prijzen zijn exclusief 21% BTW. Voor zakelijke klanten met geldig BTW-nummer is BTW verrekenbaar.'
+            a: 'Alle prijzen zijn exclusief 21% BTW.'
           },
           {
             q: 'Kunnen jullie on-site komen?',
-            a: 'Ja! On-site training is mogelijk in heel Nederland. We berekenen €150 reiskosten voor locaties buiten de Randstad.'
+            a: 'Ja! We berekenen €150 reiskosten buiten de Randstad.'
           },
           {
-            q: 'Wat als we meer dan 15 deelnemers hebben?',
-            a: 'Voor grotere groepen bieden we multiple sessies of maatwerk oplossingen. Bij 10+ deelnemers krijgt u automatisch 15% groepskorting.'
-          },
-          {
-            q: 'Is er een geld-terug-garantie?',
-            a: 'We bieden een tevredenheidsgarantie: Als u niet tevreden bent na de eerste 2 uur, kunt u kosteloos annuleren.'
-          },
-          {
-            q: 'Kunnen we in termijnen betalen?',
-            a: 'Voor pakketten boven €3.000 bieden we gespreide betaling aan (50% bij boeking, 50% na oplevering).'
-          },
-          {
-            q: 'Krijgen we ook toegang tot AI-tools?',
-            a: 'Bij Implementation en Enterprise pakketten krijgt u 3 maanden toegang tot onze AI-tools library en templates.'
+            q: 'Wat als we meer deelnemers hebben?',
+            a: 'Bij 10+ deelnemers krijgt u 15% groepskorting.'
           }
         ]
       },
       cta: {
         title: 'Klaar om te starten?',
-        subtitle: 'Plan een gratis 30-minuten consult en ontdek welk pakket het beste bij jouw organisatie past.',
-        button: 'Plan Gratis Consult',
-        contact: 'Of bel direct: +31 6 12345678'
+        subtitle: 'Plan een gratis consult',
+        button: 'Plan Gratis Consult'
       }
     },
     en: {
@@ -213,28 +174,28 @@ const PricingPage = () => {
       },
       hero: {
         title: 'Invest in AI Success',
-        subtitle: 'Market-competitive pricing for high-quality AI training and implementation. All packages include certificate and 30 days support.',
-        badge: 'Transparent pricing - No hidden costs'
+        subtitle: 'Market-competitive pricing for AI training.',
+        badge: 'Transparent pricing'
       },
       packages: {
         title: 'Choose Your Package',
-        subtitle: 'From awareness to complete transformation',
+        subtitle: 'From awareness to transformation',
         starter: {
           name: 'AI Awareness',
-          tagline: 'The perfect start',
+          tagline: 'Perfect start',
           price: '€249',
           unit: 'per person',
           duration: 'Half day (4 hours)',
           participants: 'Max 15 participants',
-          description: 'Create AI awareness and enthusiasm in your team',
+          description: 'Create AI awareness',
           features: [
-            'AI fundamentals & possibilities',
-            'Sector-specific examples',
-            'Interactive hands-on sessions',
-            'Remove fear & build confidence',
-            'Digital course materials',
-            'Q&A with AI expert',
-            'Participation certificate'
+            'AI fundamentals',
+            'Sector examples',
+            'Interactive sessions',
+            'Build confidence',
+            'Course materials',
+            'Q&A with expert',
+            'Certificate'
           ],
           cta: 'Book Workshop',
           ideal: 'Ideal for teams starting with AI'
@@ -246,56 +207,55 @@ const PricingPage = () => {
           unit: 'per person',
           duration: 'Full day (8 hours)',
           participants: 'Max 12 participants',
-          popular: true,
-          description: 'Get started with AI in your workflows immediately',
+          description: 'Get started with AI immediately',
           features: [
-            'Practical AI tools implementation',
-            'Workflow integration for your organization',
-            'Live practice sessions with real cases',
+            'Practical implementation',
+            'Workflow integration',
+            'Live practice sessions',
             'Personal action plans',
-            '30 days email support',
-            'Follow-up session after 2 weeks',
-            'Access to AI tools library',
-            'Implementation certificate'
+            '30 days support',
+            'Follow-up session',
+            'Tools library access',
+            'Certificate'
           ],
           cta: 'Start Training',
-          ideal: 'For teams wanting immediate results',
+          ideal: 'For immediate results',
           savings: 'Group discount: 10+ people = 15% off'
         },
         enterprise: {
-          name: 'AI Strategy & Roadmap',
+          name: 'AI Strategy',
           tagline: 'For organizations',
           price: 'From €5,500',
           unit: 'per organization',
-          duration: '3-4 weeks process',
+          duration: '3-4 weeks',
           participants: 'Entire organization',
-          description: 'Complete strategy and implementation roadmap',
+          description: 'Complete strategy and roadmap',
           features: [
-            'Thorough organization analysis',
-            'AI readiness assessment all departments',
-            'Strategic 12-month roadmap',
-            'ROI projections & business case',
-            'Implementation prioritization & timeline',
+            'Organization analysis',
+            'Readiness assessment',
+            '12-month roadmap',
+            'ROI projections',
+            'Implementation timeline',
             'Management presentation',
-            'Change management strategy',
-            'Quarterly review sessions (3 months)'
+            'Change management',
+            'Quarterly reviews'
           ],
           cta: 'Plan Assessment',
-          ideal: 'For strategic AI transformation',
-          includes: 'Includes 2 free Implementation trainings'
+          ideal: 'For strategic transformation',
+          includes: 'Includes 2 free trainings'
         }
       },
       addons: {
         title: 'Additional Services',
-        subtitle: 'Custom guidance tailored to your needs',
+        subtitle: 'Custom guidance',
         consulting: {
           name: 'AI Consulting',
           price: '€195',
           unit: 'per hour',
-          description: 'Strategic advice and technical expertise',
+          description: 'Strategic advice',
           features: [
             'Remote or on-site',
-            'Tool selection & evaluation',
+            'Tool selection',
             'Implementation planning',
             'ROI optimization'
           ]
@@ -304,81 +264,67 @@ const PricingPage = () => {
           name: 'Implementation Guidance',
           price: '€1,850',
           unit: 'per day',
-          description: 'Hands-on guidance during your implementation',
+          description: 'Hands-on guidance',
           features: [
             'On-site or remote',
             'Team coaching',
             'Troubleshooting',
             'Process optimization'
           ]
-        },
-        customTraining: {
-          name: 'Custom Training',
-          price: 'On request',
-          description: 'Fully customized training for your sector',
-          features: [
-            'Custom curriculum',
-            'Sector-specific cases',
-            'Flexible scheduling',
-            'Teams of 5-50 people'
-          ]
         }
       },
       pricing: {
         title: 'Why Our Pricing?',
-        subtitle: 'Transparent, fair and market-competitive',
+        subtitle: 'Transparent and fair',
         quality: {
           title: 'Premium Quality',
-          description: 'Experienced trainers with years of practical AI implementation experience'
+          description: 'Experienced trainers'
         },
         roi: {
           title: 'Measurable ROI',
-          description: 'Average 4 months to positive ROI with correct implementation'
+          description: 'Average 4 months to ROI'
         },
         support: {
           title: 'Support Included',
-          description: '30 days email support and follow-up sessions with all trainings'
+          description: '30 days support'
         },
         certificate: {
-          title: 'Recognized Certificate',
-          description: 'Official AIRA certificate for all completed trainings'
+          title: 'Certificate',
+          description: 'Official AIRA certificate'
         }
+      },
+      faq: {
+        title: 'FAQ',
+        items: [
+          {
+            q: 'Prices including VAT?',
+            a: 'All prices excluding 21% VAT.'
+          },
+          {
+            q: 'Can you come on-site?',
+            a: 'Yes! €150 travel costs apply.'
+          },
+          {
+            q: 'More participants?',
+            a: '10+ participants get 15% discount.'
+          }
+        ]
       },
       cta: {
         title: 'Ready to start?',
-        subtitle: 'Schedule a free 30-minute consultation and discover which package best fits your organization.',
-        button: 'Schedule Free Consultation',
-        contact: 'Or call directly: +31 6 12345678'
+        subtitle: 'Schedule free consultation',
+        button: 'Schedule Consultation'
       }
     }
   };
 
   const t = translations[language];
 
-  const handleBooking = (packageName: string) => {
-    setSelectedPackage(packageName);
-    setShowContactForm(true);
-  };
-
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
-      {/* Animated Background */}
+      {/* Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950/20 to-purple-950/20"></div>
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Navigation */}
@@ -400,20 +346,17 @@ const PricingPage = () => {
                 {t.nav.home}
               </a>
               
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-slate-400" />
-                <button
-                  onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
-                  className="text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors px-3 py-1 rounded border border-slate-700 hover:border-blue-500/50 bg-slate-800/50"
-                >
-                  {language === 'nl' ? 'EN' : 'NL'}
-                </button>
-              </div>
+              <button
+                onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+                className="text-sm font-medium text-slate-400 hover:text-blue-400 px-3 py-1 rounded border border-slate-700"
+              >
+                {language === 'nl' ? 'EN' : 'NL'}
+              </button>
             </div>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-3 rounded-lg text-slate-300 hover:text-blue-400 bg-slate-800/50"
+              className="md:hidden p-3 rounded-lg text-slate-300 bg-slate-800/50"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -440,7 +383,7 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* Main Packages */}
+      {/* Packages */}
       <section className="py-12 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -451,170 +394,131 @@ const PricingPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Starter Package */}
-            <div className="group relative">
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-500 h-full flex flex-col">
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-blue-400 mb-2">{t.packages.starter.tagline}</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{t.packages.starter.name}</h3>
-                  <p className="text-slate-400 text-sm mb-4">{t.packages.starter.description}</p>
-                  
-                  <div className="flex items-baseline mb-2">
-                    <span className="text-4xl font-bold text-white">{t.packages.starter.price}</span>
-                    <span className="text-slate-400 ml-2">{t.packages.starter.unit}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 text-sm text-slate-500">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {t.packages.starter.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      {t.packages.starter.participants}
-                    </div>
-                  </div>
+            {/* Starter */}
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+              <div className="text-sm font-semibold text-blue-400 mb-2">{t.packages.starter.tagline}</div>
+              <h3 className="text-2xl font-bold text-white mb-2">{t.packages.starter.name}</h3>
+              <p className="text-slate-400 text-sm mb-4">{t.packages.starter.description}</p>
+              
+              <div className="flex items-baseline mb-2">
+                <span className="text-4xl font-bold text-white">{t.packages.starter.price}</span>
+                <span className="text-slate-400 ml-2">{t.packages.starter.unit}</span>
+              </div>
+              
+              <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
+                <div className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  {t.packages.starter.duration}
+                </div>
+              </div>
+
+              <ul className="space-y-3 mb-6">
+                {t.packages.starter.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="w-full px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-all"
+              >
+                {t.packages.starter.cta}
+              </button>
+            </div>
+
+            {/* Professional */}
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-75 blur"></div>
+              <div className="relative p-8 rounded-2xl bg-slate-900 border-2 border-blue-500/50">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold">
+                  {t.packages.professional.tagline}
                 </div>
 
-                <div className="flex-1 mb-6">
-                  <ul className="space-y-3">
-                    {t.packages.starter.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <h3 className="text-2xl font-bold text-white mb-2 mt-2">{t.packages.professional.name}</h3>
+                <p className="text-slate-300 text-sm mb-4">{t.packages.professional.description}</p>
+                
+                <div className="flex items-baseline mb-2">
+                  <span className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    {t.packages.professional.price}
+                  </span>
+                  <span className="text-slate-400 ml-2">{t.packages.professional.unit}</span>
+                </div>
+                
+                <div className="flex items-center gap-4 text-sm text-slate-400 mb-2">
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {t.packages.professional.duration}
+                  </div>
+                </div>
+                
+                <div className="inline-block px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-semibold mb-6">
+                  {t.packages.professional.savings}
                 </div>
 
-                <div>
-                  <button
-                    onClick={() => handleBooking('starter')}
-                    className="w-full px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-all duration-300"
-                  >
-                    {t.packages.starter.cta}
-                  </button>
-                  <p className="text-xs text-slate-500 mt-3 text-center">{t.packages.starter.ideal}</p>
-                </div>
+                <ul className="space-y-3 mb-6">
+                  {t.packages.professional.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-200 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  onClick={() => setShowContactForm(true)}
+                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all"
+                >
+                  {t.packages.professional.cta}
+                </button>
               </div>
             </div>
 
-            {/* Professional Package - Popular */}
-            <div className="group relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-500"></div>
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border-2 border-blue-500/50 h-full flex flex-col">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold">
-                    {t.packages.professional.tagline}
-                  </div>
-                </div>
-
-                <div className="mb-6 mt-2">
-                  <h3 className="text-2xl font-bold text-white mb-2">{t.packages.professional.name}</h3>
-                  <p className="text-slate-300 text-sm mb-4">{t.packages.professional.description}</p>
-                  
-                  <div className="flex items-baseline mb-2">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      {t.packages.professional.price}
-                    </span>
-                    <span className="text-slate-400 ml-2">{t.packages.professional.unit}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 text-sm text-slate-400 mb-2">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {t.packages.professional.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      {t.packages.professional.participants}
-                    </div>
-                  </div>
-                  
-                  <div className="inline-block px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-semibold">
-                    {t.packages.professional.savings}
-                  </div>
-                </div>
-
-                <div className="flex-1 mb-6">
-                  <ul className="space-y-3">
-                    {t.packages.professional.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-200 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <button
-                    onClick={() => handleBooking('professional')}
-                    className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all duration-300"
-                  >
-                    {t.packages.professional.cta}
-                  </button>
-                  <p className="text-xs text-slate-400 mt-3 text-center">{t.packages.professional.ideal}</p>
+            {/* Enterprise */}
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-500/50 transition-all">
+              <div className="text-sm font-semibold text-purple-400 mb-2">{t.packages.enterprise.tagline}</div>
+              <h3 className="text-2xl font-bold text-white mb-2">{t.packages.enterprise.name}</h3>
+              <p className="text-slate-400 text-sm mb-4">{t.packages.enterprise.description}</p>
+              
+              <div className="flex items-baseline mb-2">
+                <span className="text-4xl font-bold text-white">{t.packages.enterprise.price}</span>
+                <span className="text-slate-400 ml-2">{t.packages.enterprise.unit}</span>
+              </div>
+              
+              <div className="flex items-center gap-4 text-sm text-slate-500 mb-2">
+                <div className="flex items-center gap-1">
+                  <Calendar className="w-4 h-4" />
+                  {t.packages.enterprise.duration}
                 </div>
               </div>
-            </div>
-
-            {/* Enterprise Package */}
-            <div className="group relative">
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-500 h-full flex flex-col">
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-purple-400 mb-2">{t.packages.enterprise.tagline}</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{t.packages.enterprise.name}</h3>
-                  <p className="text-slate-400 text-sm mb-4">{t.packages.enterprise.description}</p>
-                  
-                  <div className="flex items-baseline mb-2">
-                    <span className="text-4xl font-bold text-white">{t.packages.enterprise.price}</span>
-                    <span className="text-slate-400 ml-2">{t.packages.enterprise.unit}</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 text-sm text-slate-500 mb-2">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {t.packages.enterprise.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Target className="w-4 h-4" />
-                      {t.packages.enterprise.participants}
-                    </div>
-                  </div>
-                  
-                  <div className="inline-block px-3 py-1 rounded-full bg-purple-600/20 text-purple-400 text-xs font-semibold">
-                    {t.packages.enterprise.includes}
-                  </div>
-                </div>
-
-                <div className="flex-1 mb-6">
-                  <ul className="space-y-3">
-                    {t.packages.enterprise.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <button
-                    onClick={() => handleBooking('enterprise')}
-                    className="w-full px-6 py-3 rounded-xl bg-slate-700 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 text-white font-semibold transition-all duration-300"
-                  >
-                    {t.packages.enterprise.cta}
-                  </button>
-                  <p className="text-xs text-slate-500 mt-3 text-center">{t.packages.enterprise.ideal}</p>
-                </div>
+              
+              <div className="inline-block px-3 py-1 rounded-full bg-purple-600/20 text-purple-400 text-xs font-semibold mb-6">
+                {t.packages.enterprise.includes}
               </div>
+
+              <ul className="space-y-3 mb-6">
+                {t.packages.enterprise.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="w-full px-6 py-3 rounded-xl bg-slate-700 hover:bg-purple-600 text-white font-semibold transition-all"
+              >
+                {t.packages.enterprise.cta}
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Add-on Services */}
+      {/* Add-ons */}
       <section className="py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -622,16 +526,15 @@ const PricingPage = () => {
             <p className="text-slate-400">{t.addons.subtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Consulting */}
-            <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-700/30 hover:border-blue-500/30 transition-all">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-700/30">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-blue-600/20">
                   <Zap className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">{t.addons.consulting.name}</h3>
-                  <p className="text-sm text-slate-400">{t.addons.consulting.price} <span className="text-xs">{t.addons.consulting.unit}</span></p>
+                  <p className="text-sm text-slate-400">{t.addons.consulting.price} {t.addons.consulting.unit}</p>
                 </div>
               </div>
               <p className="text-sm text-slate-400 mb-4">{t.addons.consulting.description}</p>
@@ -645,15 +548,14 @@ const PricingPage = () => {
               </ul>
             </div>
 
-            {/* Implementation */}
-            <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-700/30 hover:border-purple-500/30 transition-all">
+            <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-700/30">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-purple-600/20">
                   <Rocket className="w-5 h-5 text-purple-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">{t.addons.implementation.name}</h3>
-                  <p className="text-sm text-slate-400">{t.addons.implementation.price} <span className="text-xs">{t.addons.implementation.unit}</span></p>
+                  <p className="text-sm text-slate-400">{t.addons.implementation.price} {t.addons.implementation.unit}</p>
                 </div>
               </div>
               <p className="text-sm text-slate-400 mb-4">{t.addons.implementation.description}</p>
@@ -665,72 +567,6 @@ const PricingPage = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Custom Training */}
-            <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-700/30 hover:border-green-500/30 transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-green-600/20">
-                  <Star className="w-5 h-5 text-green-400" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">{t.addons.customTraining.name}</h3>
-                  <p className="text-sm text-slate-400">{t.addons.customTraining.price}</p>
-                </div>
-              </div>
-              <p className="text-sm text-slate-400 mb-4">{t.addons.customTraining.description}</p>
-              <ul className="space-y-2">
-                {t.addons.customTraining.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-500">
-                    <ChevronRight className="w-4 h-4" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className="py-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-white">{t.pricing.title}</h2>
-            <p className="text-slate-400">{t.pricing.subtitle}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-6">
-              <div className="inline-flex p-3 rounded-xl bg-blue-600/20 mb-4">
-                <Award className="w-6 h-6 text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-white mb-2">{t.pricing.quality.title}</h3>
-              <p className="text-sm text-slate-400">{t.pricing.quality.description}</p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="inline-flex p-3 rounded-xl bg-green-600/20 mb-4">
-                <TrendingUp className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="font-semibold text-white mb-2">{t.pricing.roi.title}</h3>
-              <p className="text-sm text-slate-400">{t.pricing.roi.description}</p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="inline-flex p-3 rounded-xl bg-purple-600/20 mb-4">
-                <Shield className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="font-semibold text-white mb-2">{t.pricing.support.title}</h3>
-              <p className="text-sm text-slate-400">{t.pricing.support.description}</p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="inline-flex p-3 rounded-xl bg-yellow-600/20 mb-4">
-                <Sparkles className="w-6 h-6 text-yellow-400" />
-              </div>
-              <h3 className="font-semibold text-white mb-2">{t.pricing.certificate.title}</h3>
-              <p className="text-sm text-slate-400">{t.pricing.certificate.description}</p>
             </div>
           </div>
         </div>
@@ -753,23 +589,22 @@ const PricingPage = () => {
 
       {/* CTA */}
       <section className="py-20 relative z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4 text-white">{t.cta.title}</h2>
           <p className="text-xl text-slate-400 mb-8">{t.cta.subtitle}</p>
           <button
             onClick={() => setShowContactForm(true)}
-            className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all"
+            className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold"
           >
             {t.cta.button}
             <ChevronRight className="w-5 h-5 ml-2" />
           </button>
-          <p className="text-slate-500 mt-4">{t.cta.contact}</p>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-slate-500 text-sm">© 2025 AIRA. Alle rechten voorbehouden.</p>
         </div>
       </footer>
