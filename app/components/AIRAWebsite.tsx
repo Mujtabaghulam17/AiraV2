@@ -322,7 +322,7 @@ const AIRAWebsite = () => {
     <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950/20 to-purple-950/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-cyan-950/20 to-teal-950/20"></div>
         
         {/* Neural Network Background */}
         <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1200 800">
@@ -370,7 +370,7 @@ const AIRAWebsite = () => {
           {[...Array(15)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
+              className="absolute w-1 h-1 bg-cyan-400/30 rounded-full animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -394,7 +394,7 @@ const AIRAWebsite = () => {
 
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-40 transition-all duration-500 ${
-        scrollY > 50 ? 'bg-slate-950/80 backdrop-blur-xl border-b border-blue-500/20 shadow-lg shadow-blue-500/10' : 'bg-transparent'
+        scrollY > 50 ? 'bg-slate-950/80 backdrop-blur-xl border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -403,10 +403,10 @@ const AIRAWebsite = () => {
                 onClick={() => scrollToSection('home')}
                 className="relative cursor-pointer"
               >
-                <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
+                <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-teal-300 transition-all duration-300">
                   AIRA
                 </span>
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 blur-xl -z-10"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 blur-xl -z-10"></div>
               </button>
             </div>
             
@@ -418,12 +418,12 @@ const AIRAWebsite = () => {
       onClick={() => scrollToSection(section)} 
       className={`relative px-4 py-2 rounded-lg transition-all duration-300 group ${
         activeSection === section 
-          ? 'text-blue-400 font-medium' 
-          : 'text-slate-300 hover:text-blue-400'
+          ? 'text-cyan-400 font-medium' 
+          : 'text-slate-300 hover:text-cyan-400'
       }`}
                  >
       {t.nav[section as keyof typeof t.nav]}
-      <div className={`absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 ${
+      <div className={`absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-lg transition-all duration-300 ${
         activeSection === section ? 'opacity-100 scale-100' : 'opacity-0 scale-95 group-hover:opacity-50 group-hover:scale-100'
       }`}></div>
     </button>
@@ -432,19 +432,19 @@ const AIRAWebsite = () => {
               {/* Pricing Link */}
               <a 
                 href="/pricing" 
-                className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
+                className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-cyan-400"
               >
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
               </a>
               
               {/* Blog Link - External */}
   <a 
     href="/blog" 
-    className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-blue-400"
+    className="relative px-4 py-2 rounded-lg transition-all duration-300 group text-slate-300 hover:text-cyan-400"
   >
     Blog
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-lg transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"></div>
   </a>
               
               {/* Language Switcher */}
@@ -452,7 +452,7 @@ const AIRAWebsite = () => {
                 <Globe className="w-4 h-4 text-slate-400" />
                 <button
                   onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
-                  className="text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors px-3 py-1 rounded border border-slate-700 hover:border-blue-500/50 bg-slate-800/50 hover:bg-slate-800"
+                  className="text-sm font-medium text-slate-400 hover:text-cyan-400 transition-colors px-3 py-1 rounded border border-slate-700 hover:border-cyan-500/50 bg-slate-800/50 hover:bg-slate-800"
                 >
                   {language === 'nl' ? 'EN' : 'NL'}
                 </button>
@@ -462,7 +462,7 @@ const AIRAWebsite = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-3 rounded-lg text-slate-300 hover:text-blue-400 bg-slate-800/50 hover:bg-slate-800 transition-all duration-300"
+              className="md:hidden p-3 rounded-lg text-slate-300 hover:text-cyan-400 bg-slate-800/50 hover:bg-slate-800 transition-all duration-300"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -477,7 +477,7 @@ const AIRAWebsite = () => {
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)} 
-                  className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+                  className="block w-full text-left px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
                 >
                   {t.nav[section as keyof typeof t.nav]}
                 </button>
@@ -486,14 +486,14 @@ const AIRAWebsite = () => {
               {/* Mobile Pricing Link */}
               <a 
                 href="/pricing"
-                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
               >
                 {language === 'nl' ? 'Prijzen' : 'Pricing'}
               </a>
               {/* Mobile Blog Link */}
       <a 
         href="/blog"
-        className="block w-full text-left px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+        className="block w-full text-left px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
       >
         Blog
       </a>
@@ -501,7 +501,7 @@ const AIRAWebsite = () => {
               <div className="px-4 py-3">
                 <button
                   onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
-                  className="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  className="flex items-center space-x-2 text-slate-300 hover:text-cyan-400 transition-colors"
                 >
                   <Globe className="w-4 h-4" />
                   <span>{language === 'nl' ? 'English' : 'Nederlands'}</span>
@@ -517,19 +517,19 @@ const AIRAWebsite = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           {/* Floating badges */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-blue-400 mr-2 animate-pulse" />
-              <span className="text-sm text-blue-300 font-medium">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-600/20 to-teal-600/20 border border-cyan-500/30 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-cyan-400 mr-2 animate-pulse" />
+              <span className="text-sm text-cyan-300 font-medium">
                 {language === 'nl' ? 'De toekomst is AI-ready' : 'The future is AI-ready'}
               </span>
             </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 relative">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
+            <span className="bg-gradient-to-r from-white via-cyan-100 to-teal-100 bg-clip-text text-transparent leading-tight">
               {t.hero.title}
             </span>
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl opacity-50 blur-3xl -z-10"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 rounded-2xl opacity-50 blur-3xl -z-10"></div>
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -544,13 +544,13 @@ const AIRAWebsite = () => {
               }}
               className="group relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-teal-600 transition-all duration-300 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-500 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="relative flex items-center justify-center text-white">
                 {t.hero.cta}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"></div>
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-cyan-400/20 to-teal-400/20 blur-xl -z-10"></div>
             </button>
             
             <button 
@@ -558,7 +558,7 @@ const AIRAWebsite = () => {
                 setFormType('consultation');
                 setShowContactForm(true);
               }}
-              className="group relative px-8 py-4 rounded-xl font-semibold text-lg border border-slate-600 text-slate-300 hover:text-white hover:border-blue-500/50 transition-all duration-300 overflow-hidden"
+              className="group relative px-8 py-4 rounded-xl font-semibold text-lg border border-slate-600 text-slate-300 hover:text-white hover:border-cyan-500/50 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-slate-700/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="relative flex items-center justify-center">
@@ -589,8 +589,8 @@ const AIRAWebsite = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Brain, title: t.about.card1.title, description: t.about.card1.description, color: 'from-blue-500 to-cyan-500' },
-              { icon: Target, title: t.about.card2.title, description: t.about.card2.description, color: 'from-purple-500 to-pink-500' },
+              { icon: Brain, title: t.about.card1.title, description: t.about.card1.description, color: 'from-cyan-500 to-cyan-500' },
+              { icon: Target, title: t.about.card2.title, description: t.about.card2.description, color: 'from-teal-500 to-pink-500' },
               { icon: TrendingUp, title: t.about.card3.title, description: t.about.card3.description, color: 'from-green-500 to-emerald-500' }
             ].map((card, index) => (
               <div key={index} className="group relative">
@@ -602,7 +602,7 @@ const AIRAWebsite = () => {
                     <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${card.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
                       <card.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                       {card.title}
                     </h3>
                     <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
@@ -638,16 +638,16 @@ const AIRAWebsite = () => {
                 title: t.usecases.case1.title, 
                 description: t.usecases.case1.description, 
                 metric: t.usecases.case1.metric,
-                color: 'from-blue-500 to-cyan-500',
-                bgColor: 'from-blue-600/10 to-cyan-600/10'
+                color: 'from-cyan-500 to-cyan-500',
+                bgColor: 'from-cyan-600/10 to-cyan-600/10'
               },
               { 
                 icon: Shield, 
                 title: t.usecases.case2.title, 
                 description: t.usecases.case2.description, 
                 metric: t.usecases.case2.metric,
-                color: 'from-purple-500 to-pink-500',
-                bgColor: 'from-purple-600/10 to-pink-600/10'
+                color: 'from-teal-500 to-pink-500',
+                bgColor: 'from-teal-600/10 to-pink-600/10'
               },
               { 
                 icon: TrendingUp, 
@@ -672,7 +672,7 @@ const AIRAWebsite = () => {
                       {usecase.metric}
                     </div>
                     
-                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                       {usecase.title}
                     </h3>
                     <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
@@ -712,7 +712,7 @@ const AIRAWebsite = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-cyan-100 to-teal-100 bg-clip-text text-transparent">
                 {t.mission.title}
               </span>
             </h2>
@@ -749,7 +749,7 @@ const AIRAWebsite = () => {
                       <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${item.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
                         <item.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
@@ -768,15 +768,15 @@ const AIRAWebsite = () => {
                   title: t.mission.approach.title, 
                   description: t.mission.approach.description,
                   icon: Rocket,
-                  color: 'from-blue-500 to-cyan-500',
-                  bgColor: 'from-blue-600/10 to-cyan-600/10'
+                  color: 'from-cyan-500 to-cyan-500',
+                  bgColor: 'from-cyan-600/10 to-cyan-600/10'
                 },
                 { 
                   title: t.mission.impact.title, 
                   description: t.mission.impact.description,
                   icon: Sparkles,
-                  color: 'from-purple-500 to-pink-500',
-                  bgColor: 'from-purple-600/10 to-pink-600/10'
+                  color: 'from-teal-500 to-pink-500',
+                  bgColor: 'from-teal-600/10 to-pink-600/10'
                 }
               ].map((item, index) => (
                 <div key={index} className="group relative">
@@ -788,7 +788,7 @@ const AIRAWebsite = () => {
                       <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${item.color} mb-6 group-hover:scale-110 transition-all duration-300`}>
                         <item.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
@@ -803,9 +803,9 @@ const AIRAWebsite = () => {
 
           {/* Call to action within mission */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm">
-              <Users className="w-5 h-5 text-blue-400 mr-3" />
-              <span className="text-blue-300 font-medium">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-600/20 to-teal-600/20 border border-cyan-500/30 backdrop-blur-sm">
+              <Users className="w-5 h-5 text-cyan-400 mr-3" />
+              <span className="text-cyan-300 font-medium">
                 {language === 'nl' 
                   ? 'Klaar om uw team AI-geletterd te maken?' 
                   : 'Ready to make your team AI-literate?'
@@ -833,10 +833,10 @@ const AIRAWebsite = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Users, title: t.target.gov.title, description: t.target.gov.description, color: 'from-blue-400 to-blue-600' },
+              { icon: Users, title: t.target.gov.title, description: t.target.gov.description, color: 'from-cyan-400 to-cyan-600' },
               { icon: Lightbulb, title: t.target.education.title, description: t.target.education.description, color: 'from-yellow-400 to-orange-500' },
               { icon: Rocket, title: t.target.sme.title, description: t.target.sme.description, color: 'from-green-400 to-emerald-600' },
-              { icon: Award, title: t.target.consultancy.title, description: t.target.consultancy.description, color: 'from-purple-400 to-purple-600' }
+              { icon: Award, title: t.target.consultancy.title, description: t.target.consultancy.description, color: 'from-teal-400 to-teal-600' }
             ].map((target, index) => (
               <div key={index} className="group relative">
                 <div className="relative p-6 rounded-2xl bg-gradient-to-br from-slate-900/40 to-slate-800/20 border border-slate-700/30 hover:border-slate-600/50 transition-all duration-500 backdrop-blur-sm h-full">
@@ -846,7 +846,7 @@ const AIRAWebsite = () => {
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${target.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300`}>
                       <target.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
+                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
                       {target.title}
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
@@ -933,8 +933,8 @@ const AIRAWebsite = () => {
           number: '500+', 
           label: t.leaders.stats.organizations, 
           icon: Users,
-          color: 'from-blue-400 to-blue-600',
-          bgColor: 'from-blue-600/10 to-blue-800/10'
+          color: 'from-cyan-400 to-cyan-600',
+          bgColor: 'from-cyan-600/10 to-cyan-800/10'
         },
         { 
           number: '75%', 
@@ -947,8 +947,8 @@ const AIRAWebsite = () => {
           number: '4', 
           label: t.leaders.stats.roi, 
           icon: Zap,
-          color: 'from-purple-400 to-purple-600',
-          bgColor: 'from-purple-600/10 to-purple-800/10'
+          color: 'from-teal-400 to-teal-600',
+          bgColor: 'from-teal-600/10 to-teal-800/10'
         }
       ].map((stat, index) => (
         <div key={index} className="group relative">
@@ -983,7 +983,7 @@ const AIRAWebsite = () => {
             ? 'AI-chatbot beantwoordt 80% van vragen automatisch en routeert complexe cases naar de juiste afdeling.'
             : 'AI chatbot automatically answers 80% of questions and routes complex cases to the right department.',
           icon: Users,
-          color: 'from-blue-500 to-cyan-500',
+          color: 'from-cyan-500 to-cyan-500',
           logo: '🏛️'
         },
         {
@@ -999,8 +999,8 @@ const AIRAWebsite = () => {
         }
       ].map((story, index) => (
         <div key={index} className="group relative">
-          <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+          <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-500 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/5 to-teal-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
             <div className={`absolute -inset-2 bg-gradient-to-r ${story.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 -z-10`}></div>
             
             <div className="relative">
@@ -1008,7 +1008,7 @@ const AIRAWebsite = () => {
                 <div className="flex items-center space-x-4">
                   <div className="text-3xl">{story.logo}</div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300">
                       {story.organization}
                     </h3>
                     <p className="text-sm text-slate-400">{story.sector}</p>
@@ -1046,7 +1046,7 @@ const AIRAWebsite = () => {
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 via-teal-600/20 to-cyan-600/20"></div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(139,92,246,0.3),transparent_50%)]"></div>
@@ -1072,13 +1072,13 @@ const AIRAWebsite = () => {
               className="group relative inline-flex items-center px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white to-slate-100 transition-all duration-300 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="relative flex items-center justify-center text-slate-900">
-                <Sparkles className="mr-3 w-5 h-5 text-blue-600" />
+                <Sparkles className="mr-3 w-5 h-5 text-cyan-600" />
                 {t.hero.cta}
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"></div>
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-cyan-400/20 to-teal-400/20 blur-xl -z-10"></div>
             </button>
           </div>
         </div>
@@ -1090,7 +1090,7 @@ const AIRAWebsite = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <div className="flex items-center group">
-                <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
                   AIRA
                 </span>
               </div>
@@ -1121,9 +1121,9 @@ const AIRAWebsite = () => {
                   href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3 group hover:text-blue-400 transition-colors"
+                  className="flex items-center space-x-3 group hover:text-cyan-400 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-600 transition-colors">
                     <span className="text-xs">in</span>
                   </div>
                   <span>LinkedIn Profiel</span>
@@ -1135,7 +1135,7 @@ const AIRAWebsite = () => {
               <h4 className="text-lg font-semibold text-white">{t.footer.language}</h4>
               <button
                 onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
-                className="flex items-center space-x-3 text-slate-400 hover:text-blue-400 transition-colors group"
+                className="flex items-center space-x-3 text-slate-400 hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
                   <Globe className="w-4 h-4" />
@@ -1165,7 +1165,7 @@ const AIRAWebsite = () => {
       {showContactForm && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-slate-700 shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-teal-600/10 rounded-2xl"></div>
             
             <div className="relative">
               <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
@@ -1173,7 +1173,7 @@ const AIRAWebsite = () => {
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {formType === 'quickscan' ? t.form.title : t.form.titleConsultation}
                   </h3>
-                  <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                  <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full"></div>
                 </div>
                 <button
                   onClick={() => setShowContactForm(false)}
