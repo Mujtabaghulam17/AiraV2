@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   ChevronDown, Users, Target, Award, ArrowRight, Menu, X, Globe, 
   CheckCircle, Brain, TrendingUp, Zap, Shield, 
-  ExternalLink, Cpu, Linkedin, Lock, Code
+  ExternalLink, Cpu, Linkedin, Lock
 } from 'lucide-react';
 
 // --- TYPES ---
@@ -21,7 +21,6 @@ const AIRAWebsite = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // --- SEO & GEO STRATEGY (JSON-LD) ---
-  // Dit vertelt Google: AIRA is de eigenaar, GlowExamen is het product.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -320,7 +319,7 @@ const AIRAWebsite = () => {
         </div>
       </section>
 
-      {/* --- VENTURES SECTION (STRATEGIC PROOF) --- */}
+      {/* --- VENTURES SECTION (UPDATED WITH GLOW LOGO SVG) --- */}
       <section id="ventures" className="py-32 relative z-10 border-t border-white/5 bg-[#020408]/50">
         <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
@@ -343,9 +342,40 @@ const AIRAWebsite = () => {
                         <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wide mb-6">
                             {t.ventures.glow.badge}
                         </div>
-                        <h4 className="text-4xl font-black tracking-tighter text-white mb-2">
-                            GLOW<span className="text-slate-600">EXAMEN</span>
-                        </h4>
+                        
+                        {/* === GLOWEXAMEN LOGO (SVG) === */}
+                        <div className="mb-6">
+                            <svg width="300" height="60" viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="glowTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stopColor="#d946ef" />
+                                        <stop offset="50%" stopColor="#a855f7" />
+                                        <stop offset="100%" stopColor="#8b5cf6" />
+                                    </linearGradient>
+                                    <filter id="glowBlur" x="-10" y="-10" width="50" height="100">
+                                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                {/* The Curved Line */}
+                                <path d="M15 55 Q 25 25, 45 20" stroke="url(#glowTextGrad)" strokeWidth="5" strokeLinecap="round" filter="url(#glowBlur)"/>
+                                <circle cx="45" cy="20" r="4" fill="#d946ef" filter="url(#glowBlur)"/>
+                                
+                                {/* Text "GLOW" */}
+                                <text x="60" y="55" fontFamily="sans-serif" fontWeight="900" fontSize="48" fill="url(#glowTextGrad)" letterSpacing="-1">
+                                    GLOW
+                                </text>
+                                {/* Text "EXAMEN" (White) */}
+                                <text x="205" y="55" fontFamily="sans-serif" fontWeight="700" fontSize="48" fill="#FFFFFF" letterSpacing="-1">
+                                    EXAMEN
+                                </text>
+                            </svg>
+                        </div>
+                        {/* ============================ */}
+
                         <p className="text-xl text-slate-400 mb-8 leading-relaxed">
                             {t.ventures.glow.desc}
                         </p>
@@ -362,7 +392,7 @@ const AIRAWebsite = () => {
                         </div>
 
                         <div className="mt-10">
-                             {/* LINK NAAR INTERNE CASE STUDY */}
+                             {/* LINK TO CASE STUDY */}
                              <a href="/cases/glow" className="text-white font-bold hover:text-blue-400 transition-colors inline-flex items-center gap-2 border-b border-blue-500/30 pb-1 hover:border-blue-500">
                                 View Product Case Study <ArrowRight className="w-4 h-4" />
                              </a>
@@ -372,10 +402,20 @@ const AIRAWebsite = () => {
                     {/* Visual Mockup Area */}
                     <div className="relative h-[300px] md:h-[400px] rounded-2xl bg-[#020408] border border-white/5 overflow-hidden order-1 lg:order-2 group-hover:translate-y-[-5px] transition-transform">
                          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
-                         <div className="absolute inset-10 border border-white/10 rounded-xl flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="text-6xl font-black text-white/10">GLOW</div>
-                                <div className="text-sm text-white/20 mt-2">Powered by AIRA</div>
+                         {/* Abstract UI showing "Zen Mode" analytics */}
+                         <div className="absolute inset-8 border border-white/5 rounded-xl bg-[#0B0D14]/80 backdrop-blur-sm p-6 flex flex-col justify-between">
+                            <div className="flex justify-between items-center border-b border-white/5 pb-4">
+                                <div className="w-24 h-3 rounded-full bg-white/10"></div>
+                                <div className="flex gap-2">
+                                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                                </div>
+                            </div>
+                            <div className="flex gap-4 items-end">
+                                <div className="w-1/3 h-24 bg-purple-500/20 rounded-t-lg animate-pulse"></div>
+                                <div className="w-1/3 h-40 bg-blue-500/20 rounded-t-lg"></div>
+                                <div className="w-1/3 h-32 bg-pink-500/20 rounded-t-lg"></div>
                             </div>
                          </div>
                     </div>
@@ -384,7 +424,7 @@ const AIRAWebsite = () => {
         </div>
       </section>
 
-      {/* --- WHY AIRA (BENTO GRID) - NEW SECTION --- */}
+      {/* --- WHY AIRA (BENTO GRID) --- */}
       <section id="why" className="py-32 relative z-10">
          <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-20">
@@ -462,7 +502,7 @@ const AIRAWebsite = () => {
          </div>
       </section>
 
-      {/* --- FOOTER --- */}
+      {/* --- FOOTER (MET LINKEDIN) --- */}
       <footer className="py-16 border-t border-white/10 bg-[#020408] relative z-10">
         <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
