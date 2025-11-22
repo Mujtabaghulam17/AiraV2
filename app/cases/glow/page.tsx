@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, CheckCircle, Cpu, Database, Layers, 
-  BarChart3, Shield, Zap, ArrowRight, Globe, Brain, Users 
+  BarChart3, Shield, Zap, ArrowRight, Globe, Brain, Users, ExternalLink 
 } from 'lucide-react';
 
 // --- TYPES & TRANSLATIONS ---
