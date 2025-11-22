@@ -199,13 +199,11 @@ const AIRAWebsite = () => {
         scrollY > 50 ? 'bg-[#020408]/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            {/* Logo */}
             <button onClick={() => scrollToSection('home')} className="flex items-center gap-3 group">
                 <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">A</div>
                 <span className="text-xl font-bold tracking-tight text-white">AIRA</span>
             </button>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
                 {['home', 'ventures', 'why', 'mission'].map((key) => (
                     <button
@@ -221,7 +219,6 @@ const AIRAWebsite = () => {
                 
                 <div className="h-4 w-px bg-white/10 mx-2"></div>
 
-                {/* Nav Icon: LinkedIn */}
                 <a 
                   href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
                   target="_blank" 
@@ -232,7 +229,6 @@ const AIRAWebsite = () => {
                     <Linkedin className="w-5 h-5" />
                 </a>
 
-                {/* Nav Icon: Language */}
                 <button 
                     onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
                     className="text-xs font-mono text-slate-500 hover:text-white transition-colors uppercase"
@@ -240,7 +236,6 @@ const AIRAWebsite = () => {
                     {language === 'nl' ? 'EN' : 'NL'}
                 </button>
 
-                {/* Nav Button: CTA */}
                 <button 
                     onClick={() => { setFormType('quickscan'); setShowContactForm(true); }}
                     className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-5 py-2 rounded-full text-sm font-medium transition-all hover:border-blue-500/50"
@@ -249,7 +244,6 @@ const AIRAWebsite = () => {
                 </button>
             </div>
 
-            {/* Mobile Toggle */}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white">
                 {isMenuOpen ? <X /> : <Menu />}
             </button>
@@ -319,10 +313,10 @@ const AIRAWebsite = () => {
         </div>
       </section>
 
-      {/* --- VENTURES SECTION (UPDATED WITH GLOW LOGO SVG) --- */}
+      {/* --- VENTURES SECTION (FIXED: Clickable & Browser Mockup) --- */}
       <section id="ventures" className="py-32 relative z-10 border-t border-white/5 bg-[#020408]/50">
         <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 relative z-20">
                 <div className="max-w-2xl">
                     <h2 className="text-blue-500 font-mono text-sm mb-4 uppercase tracking-widest">Venture Studio</h2>
                     <h3 className="text-4xl md:text-5xl font-bold mb-4">{t.ventures.title}</h3>
@@ -335,16 +329,17 @@ const AIRAWebsite = () => {
 
             {/* GlowExamen Card - High End */}
             <div className="group relative rounded-3xl bg-gradient-to-br from-[#0B0D14] to-[#050507] border border-white/10 overflow-hidden hover:border-blue-500/50 transition-all duration-500 shadow-2xl">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Background Effect (Moved to z-0 and pointer-events-none to fix clicking) */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 items-center relative z-10">
                     <div className="flex flex-col justify-center order-2 lg:order-1">
                         <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wide mb-6">
                             {t.ventures.glow.badge}
                         </div>
                         
-                        {/* === GLOWEXAMEN LOGO (SVG) === */}
-                        <div className="mb-6">
+                        {/* GLOW LOGO SVG */}
+                        <div className="mb-6 select-none">
                             <svg width="300" height="60" viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="glowTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -360,27 +355,18 @@ const AIRAWebsite = () => {
                                         </feMerge>
                                     </filter>
                                 </defs>
-                                {/* The Curved Line */}
                                 <path d="M15 55 Q 25 25, 45 20" stroke="url(#glowTextGrad)" strokeWidth="5" strokeLinecap="round" filter="url(#glowBlur)"/>
                                 <circle cx="45" cy="20" r="4" fill="#d946ef" filter="url(#glowBlur)"/>
-                                
-                                {/* Text "GLOW" */}
-                                <text x="60" y="55" fontFamily="sans-serif" fontWeight="900" fontSize="48" fill="url(#glowTextGrad)" letterSpacing="-1">
-                                    GLOW
-                                </text>
-                                {/* Text "EXAMEN" (White) */}
-                                <text x="205" y="55" fontFamily="sans-serif" fontWeight="700" fontSize="48" fill="#FFFFFF" letterSpacing="-1">
-                                    EXAMEN
-                                </text>
+                                <text x="60" y="55" fontFamily="sans-serif" fontWeight="900" fontSize="48" fill="url(#glowTextGrad)" letterSpacing="-1">GLOW</text>
+                                <text x="205" y="55" fontFamily="sans-serif" fontWeight="700" fontSize="48" fill="#FFFFFF" letterSpacing="-1">EXAMEN</text>
                             </svg>
                         </div>
-                        {/* ============================ */}
 
                         <p className="text-xl text-slate-400 mb-8 leading-relaxed">
                             {t.ventures.glow.desc}
                         </p>
                         
-                        <div className="space-y-4 border-l-2 border-white/10 pl-6">
+                        <div className="space-y-4 border-l-2 border-white/10 pl-6 mb-10">
                             <div className="flex items-center gap-3 text-slate-300">
                                 <Brain className="w-5 h-5 text-blue-500" />
                                 <span>Built on <strong>AIRA Neural Core™</strong></span>
@@ -391,31 +377,60 @@ const AIRAWebsite = () => {
                             </div>
                         </div>
 
-                        <div className="mt-10">
-                             {/* LINK TO CASE STUDY */}
-                             <a href="/cases/glow" className="text-white font-bold hover:text-blue-400 transition-colors inline-flex items-center gap-2 border-b border-blue-500/30 pb-1 hover:border-blue-500">
+                        {/* BUTTON FIX: Added relative and z-20 to ensure it's clickable */}
+                        <div className="relative z-20">
+                             <a href="/cases/glow" className="text-white font-bold hover:text-blue-400 transition-colors inline-flex items-center gap-2 border-b border-blue-500/30 pb-1 hover:border-blue-500 cursor-pointer">
                                 View Product Case Study <ArrowRight className="w-4 h-4" />
                              </a>
                         </div>
                     </div>
 
-                    {/* Visual Mockup Area */}
-                    <div className="relative h-[300px] md:h-[400px] rounded-2xl bg-[#020408] border border-white/5 overflow-hidden order-1 lg:order-2 group-hover:translate-y-[-5px] transition-transform">
-                         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
-                         {/* Abstract UI showing "Zen Mode" analytics */}
-                         <div className="absolute inset-8 border border-white/5 rounded-xl bg-[#0B0D14]/80 backdrop-blur-sm p-6 flex flex-col justify-between">
-                            <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                                <div className="w-24 h-3 rounded-full bg-white/10"></div>
-                                <div className="flex gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                    {/* BROWSER WINDOW MOCKUP (Replacing abstract bars) */}
+                    <div className="relative h-[350px] md:h-[420px] order-1 lg:order-2 group-hover:translate-y-[-5px] transition-transform duration-500">
+                         {/* Browser Container */}
+                         <div className="absolute inset-0 bg-white rounded-xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col">
+                            {/* Browser Toolbar */}
+                            <div className="h-8 bg-[#f1f5f9] border-b border-slate-200 flex items-center px-4 gap-2">
+                                <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                                <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+                                <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                                <div className="ml-4 h-5 w-2/3 bg-white border border-slate-200 rounded text-[10px] text-slate-400 flex items-center px-2 font-mono">
+                                    glowexamen.nl/dashboard
                                 </div>
                             </div>
-                            <div className="flex gap-4 items-end">
-                                <div className="w-1/3 h-24 bg-purple-500/20 rounded-t-lg animate-pulse"></div>
-                                <div className="w-1/3 h-40 bg-blue-500/20 rounded-t-lg"></div>
-                                <div className="w-1/3 h-32 bg-pink-500/20 rounded-t-lg"></div>
+                            
+                            {/* Browser Content (The App UI) */}
+                            <div className="flex-1 bg-white p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                                {/* Background gradient of the app */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-purple-50 to-blue-50"></div>
+                                
+                                {/* Hero Content Mockup */}
+                                <div className="relative z-10 text-center space-y-4 max-w-xs">
+                                    <div className="inline-flex items-center justify-center">
+                                        {/* Mini Logo */}
+                                        <div className="text-2xl font-bold text-slate-900 tracking-tighter">
+                                            <span className="text-purple-600">GLOW</span>EXAMEN
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 leading-tight">
+                                        Jouw examen glow-up begint hier.
+                                    </h3>
+                                    <div className="w-full h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg shadow-lg flex items-center justify-center text-white text-sm font-bold">
+                                        Start je glow-up →
+                                    </div>
+                                    
+                                    {/* Features List */}
+                                    <div className="grid grid-cols-1 gap-2 text-left mt-4">
+                                        <div className="flex gap-2 items-center bg-white p-2 rounded border border-slate-100 shadow-sm">
+                                            <div className="w-4 h-4 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-[8px]">✓</div>
+                                            <div className="text-[10px] font-bold text-slate-700">Gepersonaliseerd</div>
+                                        </div>
+                                        <div className="flex gap-2 items-center bg-white p-2 rounded border border-slate-100 shadow-sm">
+                                            <div className="w-4 h-4 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-[8px]">✓</div>
+                                            <div className="text-[10px] font-bold text-slate-700">Slimme Feedback</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                          </div>
                     </div>
@@ -432,10 +447,8 @@ const AIRAWebsite = () => {
                 <p className="text-xl text-slate-400 max-w-2xl mx-auto">{t.why.subtitle}</p>
             </div>
 
-            {/* Bento Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
-                
-                {/* Card 1: Tech (Large) */}
+                {/* Tech Card */}
                 <div className="md:col-span-2 p-8 rounded-3xl bg-gradient-to-br from-blue-900/20 to-slate-900/40 border border-white/10 hover:border-blue-500/30 transition-all group relative overflow-hidden">
                     <div className="absolute right-0 top-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
                     <Cpu className="w-10 h-10 text-blue-400 mb-6" />
@@ -443,21 +456,21 @@ const AIRAWebsite = () => {
                     <p className="text-slate-400 text-lg max-w-md">{t.why.cards.tech.desc}</p>
                 </div>
 
-                {/* Card 2: ROI */}
+                {/* ROI Card */}
                 <div className="p-8 rounded-3xl bg-slate-900/40 border border-white/10 hover:border-green-500/30 transition-all group">
                     <TrendingUp className="w-10 h-10 text-green-400 mb-6" />
                     <h3 className="text-2xl font-bold mb-4">{t.why.cards.roi.title}</h3>
                     <p className="text-slate-400">{t.why.cards.roi.desc}</p>
                 </div>
 
-                {/* Card 3: Security */}
+                {/* Security Card */}
                 <div className="p-8 rounded-3xl bg-slate-900/40 border border-white/10 hover:border-purple-500/30 transition-all group">
                     <Lock className="w-10 h-10 text-purple-400 mb-6" />
                     <h3 className="text-2xl font-bold mb-4">{t.why.cards.security.title}</h3>
                     <p className="text-slate-400">{t.why.cards.security.desc}</p>
                 </div>
 
-                {/* Card 4: Human (Large) */}
+                {/* Human Card */}
                 <div className="md:col-span-2 p-8 rounded-3xl bg-gradient-to-br from-purple-900/20 to-slate-900/40 border border-white/10 hover:border-purple-500/30 transition-all group relative overflow-hidden">
                      <div className="absolute right-0 top-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
                     <Users className="w-10 h-10 text-pink-400 mb-6" />
@@ -502,7 +515,7 @@ const AIRAWebsite = () => {
          </div>
       </section>
 
-      {/* --- FOOTER (MET LINKEDIN) --- */}
+      {/* --- FOOTER --- */}
       <footer className="py-16 border-t border-white/10 bg-[#020408] relative z-10">
         <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
@@ -514,7 +527,7 @@ const AIRAWebsite = () => {
                     <p className="text-slate-500 text-sm max-w-xs">{t.footer.tagline}</p>
                 </div>
                 
-                {/* LINKEDIN KNOP - Opvallend */}
+                {/* LINKEDIN BUTTON */}
                 <a 
                     href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
                     target="_blank"
