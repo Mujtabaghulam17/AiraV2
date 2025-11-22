@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ChevronDown, Users, Target, Award, ArrowRight, Menu, X, Globe, 
-  CheckCircle, Brain, Lightbulb, TrendingUp, Sparkles, Zap, Shield, 
-  Rocket, Layers, ExternalLink, Cpu, Linkedin, Lock
+  CheckCircle, Brain, TrendingUp, Zap, Shield, 
+  ExternalLink, Cpu, Linkedin, Lock, Code
 } from 'lucide-react';
 
 // --- TYPES ---
@@ -21,7 +21,7 @@ const AIRAWebsite = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // --- SEO & GEO STRATEGY (JSON-LD) ---
-  // Dit maakt de hiërarchie duidelijk voor Google: AIRA is de eigenaar, GlowExamen is het product.
+  // Dit vertelt Google: AIRA is de eigenaar, GlowExamen is het product.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -45,7 +45,6 @@ const AIRAWebsite = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      // Detect active section for highlighting nav
       const sections = ['home', 'ventures', 'why', 'mission'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -89,7 +88,7 @@ const AIRAWebsite = () => {
       },
       ventures: {
         title: 'Onze Ventures',
-        subtitle: 'Het bewijs van onze technologie: wij bouwen onze eigen succesvolle SaaS producten.',
+        subtitle: 'Het bewijs van onze technologie: wij bouwen en schalen onze eigen SaaS producten.',
         glow: {
           badge: 'Flagship Product',
           desc: 'Het #1 AI-platform voor examentraining in Nederland. Gebouwd op de AIRA Neural Core™.',
@@ -114,7 +113,8 @@ const AIRAWebsite = () => {
       },
       footer: {
         rights: '© 2025 AIRA AI. Alle rechten voorbehouden.',
-        tagline: 'Building the intelligence layer for the Netherlands.'
+        tagline: 'Building the intelligence layer for the Netherlands.',
+        linkedin: 'Volg ons op LinkedIn'
       }
     },
     en: {
@@ -160,7 +160,8 @@ const AIRAWebsite = () => {
       },
       footer: {
         rights: '© 2025 AIRA AI. All rights reserved.',
-        tagline: 'Building the intelligence layer for the Netherlands.'
+        tagline: 'Building the intelligence layer for the Netherlands.',
+        linkedin: 'Connect on LinkedIn'
       }
     }
   } as const;
@@ -174,6 +175,7 @@ const AIRAWebsite = () => {
 
   return (
     <div className="min-h-screen bg-[#020408] text-white overflow-x-hidden font-sans selection:bg-blue-500/30">
+      {/* Inject SEO Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* --- BACKGROUND FX --- */}
@@ -198,11 +200,13 @@ const AIRAWebsite = () => {
         scrollY > 50 ? 'bg-[#020408]/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            {/* Logo */}
             <button onClick={() => scrollToSection('home')} className="flex items-center gap-3 group">
                 <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">A</div>
                 <span className="text-xl font-bold tracking-tight text-white">AIRA</span>
             </button>
 
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
                 {['home', 'ventures', 'why', 'mission'].map((key) => (
                     <button
@@ -218,10 +222,18 @@ const AIRAWebsite = () => {
                 
                 <div className="h-4 w-px bg-white/10 mx-2"></div>
 
-                <a href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" target="_blank" className="text-slate-400 hover:text-[#0077b5] transition-colors">
+                {/* Nav Icon: LinkedIn */}
+                <a 
+                  href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-[#0077b5] transition-colors"
+                  title="LinkedIn"
+                >
                     <Linkedin className="w-5 h-5" />
                 </a>
 
+                {/* Nav Icon: Language */}
                 <button 
                     onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
                     className="text-xs font-mono text-slate-500 hover:text-white transition-colors uppercase"
@@ -229,6 +241,7 @@ const AIRAWebsite = () => {
                     {language === 'nl' ? 'EN' : 'NL'}
                 </button>
 
+                {/* Nav Button: CTA */}
                 <button 
                     onClick={() => { setFormType('quickscan'); setShowContactForm(true); }}
                     className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-5 py-2 rounded-full text-sm font-medium transition-all hover:border-blue-500/50"
@@ -237,6 +250,7 @@ const AIRAWebsite = () => {
                 </button>
             </div>
 
+            {/* Mobile Toggle */}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white">
                 {isMenuOpen ? <X /> : <Menu />}
             </button>
@@ -250,6 +264,13 @@ const AIRAWebsite = () => {
                         {t.nav[key as keyof typeof t.nav]}
                     </button>
                 ))}
+                 <a 
+                  href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
+                  target="_blank" 
+                  className="text-left text-lg text-slate-300 py-2 flex items-center gap-2"
+                >
+                    LinkedIn <ExternalLink className="w-4 h-4"/>
+                </a>
                 <button onClick={() => { setFormType('quickscan'); setShowContactForm(true); }} className="bg-blue-600 text-white py-3 rounded-lg font-bold w-full">
                     {t.hero.cta}
                 </button>
@@ -341,7 +362,8 @@ const AIRAWebsite = () => {
                         </div>
 
                         <div className="mt-10">
-                             <a href="https://www.glowexamen.nl" target="_blank" className="text-white font-bold hover:text-blue-400 transition-colors inline-flex items-center gap-2">
+                             {/* LINK NAAR INTERNE CASE STUDY */}
+                             <a href="/cases/glow" className="text-white font-bold hover:text-blue-400 transition-colors inline-flex items-center gap-2 border-b border-blue-500/30 pb-1 hover:border-blue-500">
                                 View Product Case Study <ArrowRight className="w-4 h-4" />
                              </a>
                         </div>
@@ -362,7 +384,7 @@ const AIRAWebsite = () => {
         </div>
       </section>
 
-      {/* --- WHY AIRA (BENTO GRID) --- */}
+      {/* --- WHY AIRA (BENTO GRID) - NEW SECTION --- */}
       <section id="why" className="py-32 relative z-10">
          <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-20">
@@ -440,7 +462,7 @@ const AIRAWebsite = () => {
          </div>
       </section>
 
-      {/* --- FOOTER (MET LINKEDIN) --- */}
+      {/* --- FOOTER --- */}
       <footer className="py-16 border-t border-white/10 bg-[#020408] relative z-10">
         <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
@@ -452,14 +474,15 @@ const AIRAWebsite = () => {
                     <p className="text-slate-500 text-sm max-w-xs">{t.footer.tagline}</p>
                 </div>
                 
-                {/* Social Proof / LinkedIn Button */}
+                {/* LINKEDIN KNOP - Opvallend */}
                 <a 
                     href="https://linkedin.com/company/aira-artificialintelligence-readiness-adaptability" 
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#0077b5]/10 border border-[#0077b5]/20 text-[#0077b5] hover:bg-[#0077b5] hover:text-white transition-all duration-300 group"
                 >
                     <Linkedin className="w-5 h-5" />
-                    <span className="font-medium">Connect on LinkedIn</span>
+                    <span className="font-medium">{t.footer.linkedin}</span>
                     <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100" />
                 </a>
             </div>
